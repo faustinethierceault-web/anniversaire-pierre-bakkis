@@ -17,14 +17,14 @@
    Couleurs et polices : modifie uniquement les variables ci-dessous.
    ========================================================================== */
 :root {
-  --navy:   #0a1129;
-  --navy2:  #121c3d;
-  --navy3:  #1b2a57;
-  --wine:   #7a1b3d;
-  --wine2:  #4a0f26;
-  --gold:   #e6c37a;
-  --gold2:  #f8e6b0;
-  --cream:  #fff8ed;
+  --navy:   #07172f;
+  --navy2:  #102443;
+  --navy3:  #1b3558;
+  --wine:   #702b3d;
+  --wine2:  #3d1724;
+  --gold:   #d8b76e;
+  --gold2:  #f4e7c5;
+  --cream:  #fffdf8;
   --serif:  "Cormorant Garamond", Georgia, serif;
   --sans:   Montserrat, "Helvetica Neue", Arial, sans-serif;
   --ease:   cubic-bezier(.22, .8, .24, 1);
@@ -203,13 +203,13 @@ nav {
 @keyframes shine { 0%, 55% { left: -60%; } 100% { left: 130%; } }
 .btn:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -14px rgba(230, 195, 122, 1); }
 .btn:disabled { opacity: .65; cursor: wait; transform: none; }
-.btn--wine { color: var(--cream); border-color: var(--wine); background: linear-gradient(135deg, #9a2650, var(--wine) 60%, var(--wine2)); box-shadow: 0 14px 34px -14px rgba(122, 27, 61, .9); }
+.btn--wine { color: var(--cream); border-color: var(--wine); background: linear-gradient(135deg, #84364a, var(--wine) 60%, var(--wine2)); box-shadow: 0 14px 34px -14px rgba(80, 24, 42, .55); }
 
 /* Tapis rouge au bas de l'accueil */
 .carpet { position: absolute; z-index: -1; left: 50%; bottom: 0; width: min(980px, 130%); height: 96px; transform: translateX(-50%); pointer-events: none; }
 .carpet::before, .carpet::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; top: 0; clip-path: polygon(33% 0, 67% 0, 100% 100%, 0 100%); }
 .carpet::before { background: var(--gold); }
-.carpet::after { background: linear-gradient(180deg, #5d1230, #a02a55); clip-path: polygon(33.4% 3px, 66.6% 3px, 98.6% 100%, 1.4% 100%); }
+.carpet::after { background: linear-gradient(180deg, #481b2b, #76283e); clip-path: polygon(33.4% 3px, 66.6% 3px, 98.6% 100%, 1.4% 100%); }
 
 /* Flashs d'appareils photo (jamais plus d'un flash lent et doux à la fois) */
 .flash { position: fixed; inset: 0; z-index: 90; pointer-events: none; background: #fff; opacity: 0; }
@@ -299,7 +299,7 @@ section { padding: clamp(66px, 9vw, 104px) max(18px, env(safe-area-inset-right))
 .grid { position: relative; max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .card {
   position: relative; padding: 36px 22px 32px; text-align: center; border: 1px solid rgba(230, 195, 122, .4);
-  background: linear-gradient(160deg, rgba(27, 42, 87, .75), rgba(74, 15, 38, .55));
+  background: linear-gradient(160deg, rgba(27, 53, 88, .82), rgba(7, 23, 47, .88));
   transition: transform .45s var(--ease), box-shadow .45s, border-color .3s;
 }
 .card::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(230, 195, 122, .15); pointer-events: none; }
@@ -311,7 +311,7 @@ section { padding: clamp(66px, 9vw, 104px) max(18px, env(safe-area-inset-right))
 .card .ico { width: 52px; height: 52px; margin: 0 auto; color: var(--gold); fill: none; stroke: currentColor; stroke-width: 1.4; display: block; }
 
 /* ---------- TENUE ---------- */
-.dress { text-align: center; background: radial-gradient(ellipse 70% 80% at 50% 0%, #8f2349, var(--wine2) 65%, #2d0919); overflow: hidden; }
+.dress { text-align: center; background: radial-gradient(ellipse 65% 75% at 50% 0%, #294363 0%, var(--navy2) 58%, var(--navy) 100%); overflow: hidden; }
 .dress::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .25; background: repeating-linear-gradient(0deg, transparent 0 30px, rgba(230, 195, 122, .25) 30px 31px); -webkit-mask-image: linear-gradient(180deg, transparent, #000 50%, transparent); mask-image: linear-gradient(180deg, transparent, #000 50%, transparent); }
 .dress-box { position: relative; max-width: 880px; margin: 0 auto; padding: clamp(30px, 5vw, 56px) clamp(16px, 4vw, 40px); border: 1px solid var(--gold); background: rgba(10, 17, 41, .55); }
 .dress-box::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(230, 195, 122, .25); pointer-events: none; }
@@ -436,12 +436,12 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
 }
 .moodboard figure {
   margin: 0; overflow: hidden; border: 1px solid rgba(230,195,122,.55);
-  border-radius: 16px; background: linear-gradient(145deg, rgba(27,42,87,.8), rgba(74,15,38,.65));
+  border-radius: 16px; background: linear-gradient(145deg, rgba(16,36,67,.92), rgba(61,23,36,.45));
   box-shadow: 0 12px 30px #0003;
 }
 .moodboard img {
   display: block; width: 100%; height: 270px; object-fit: cover;
-  background: linear-gradient(135deg,#19243d,#741d3c);
+  background: linear-gradient(135deg,#102443,#702b3d);
 }
 .moodboard figcaption {
   padding: 13px 8px; color: var(--gold2); font: 600 1.15rem var(--serif);
@@ -451,7 +451,7 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
 /* ---------- GALERIE DES DEUX STARS ---------- */
 .stars-gallery {
   text-align: center;
-  background: linear-gradient(145deg,#19243d,#101629 70%,#43182d);
+  background: linear-gradient(145deg,#102443,#07172f 75%,#3d1724);
 }
 .photo-carousel {
   display: flex; align-items: center; justify-content: center;
@@ -470,7 +470,7 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
 .photo-caption {
   position: absolute; inset: auto 0 0; padding: 34px 15px 16px;
   color: white; font: 26px var(--serif);
-  background: linear-gradient(transparent,#080e19df);
+  background: linear-gradient(transparent,#07172fdf);
 }
 .carousel-arrow {
   flex: 0 0 42px; width: 42px; height: 42px;
@@ -485,7 +485,7 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
   border-radius: 50%; background: #ffffff55; cursor: pointer;
 }
 .carousel-dots button.active { background: var(--gold); transform: scale(1.35); }
-.gallery-note { margin-top: 20px; color: #e8d8c1; font: italic 20px var(--serif); }
+.gallery-note { margin-top: 20px; color: #fffdf8; font: italic 20px var(--serif); }
 
 @media(max-width:700px) {
   .moodboard { grid-template-columns: 1fr; max-width: 420px; }
@@ -699,8 +699,6 @@ Les noms doivent correspondre exactement aux chemins utilisés dans le code.
       </figure>
     </div>
 
-    <p class="quip">« Plaquages sur le terrain, élégance sur le dancefloor. »</p>
-    <p class="fine">Et surtout, garde ton énergie pour la troisième mi-temps ! 🏉</p>
   </div>
 </section>
 
