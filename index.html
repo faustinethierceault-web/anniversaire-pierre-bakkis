@@ -1,956 +1,1064 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0a1129">
+<meta name="theme-color" content="#101629">
 <title>Pierre & Bakkis — Le grand gala des 18 ans</title>
-<meta name="description" content="Invitation au grand gala des 18 ans de Pierre & Bakkis. Tapis rouge, tenue de gala et troisième mi-temps.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* ==========================================================================
-   GALA DES 18 ANS — rugby chic, tapis rouge, projecteurs et flashs
-   Couleurs et polices : modifie uniquement les variables ci-dessous.
-   ========================================================================== */
 :root {
-  --navy:   #0a1129;
-  --navy2:  #121c3d;
-  --navy3:  #1b2a57;
-  --wine:   #7a1b3d;
-  --wine2:  #4a0f26;
-  --gold:   #e6c37a;
-  --gold2:  #f8e6b0;
-  --cream:  #fff8ed;
-  --serif:  "Cormorant Garamond", Georgia, serif;
-  --sans:   Montserrat, "Helvetica Neue", Arial, sans-serif;
-  --ease:   cubic-bezier(.22, .8, .24, 1);
+  --navy: #101629;
+  --navy2: #19243d;
+  --wine: #741d3c;
+  --gold: #e2bf75;
+  --cream: #fff8ed;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--navy);
   color: var(--cream);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.6;
+  font-family: Montserrat, sans-serif;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; text-decoration: none; }
-button, input, select, textarea { font: inherit; }
-h1, h2, h3, p { margin: 0; }
-:focus-visible { outline: 2px solid var(--gold2); outline-offset: 3px; }
-.hidden { display: none !important; }
-
-/* ---------- Texte doré ---------- */
-.gold-text {
-  background: linear-gradient(180deg, var(--gold2) 5%, var(--gold) 50%, #b8924a 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 
-/* ---------- NAVIGATION ---------- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+/* NAVIGATION */
+
 nav {
-  position: sticky; top: 0; z-index: 50;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 10px max(18px, env(safe-area-inset-right)) 10px max(18px, env(safe-area-inset-left));
-  background: rgba(10, 17, 41, .88); backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(230, 195, 122, .3);
-}
-.brand { font: 700 24px var(--serif); letter-spacing: 2px; color: var(--gold2); }
-.brand i { color: var(--gold); font-weight: 500; margin: 0 2px; }
-.links { display: flex; gap: clamp(14px, 3vw, 34px); }
-.links a {
-  font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase;
-  padding: 8px 0; position: relative; transition: color .25s;
-}
-.links a::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px;
-  background: var(--gold); transform: scaleX(0); transition: transform .35s var(--ease);
-}
-.links a:hover { color: var(--gold2); }
-.links a:hover::after { transform: scaleX(1); }
-.burger { display: none; width: 44px; height: 44px; background: none; border: 0; position: relative; cursor: pointer; }
-.burger span { position: absolute; left: 11px; right: 11px; height: 1.5px; background: var(--gold2); transition: .3s var(--ease); }
-.burger span:nth-child(1) { top: 16px; } .burger span:nth-child(2) { top: 22px; } .burger span:nth-child(3) { top: 28px; }
-.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-@media (max-width: 760px) {
-  .burger { display: block; }
-  .links {
-    position: fixed; left: 0; right: 0; top: 64px; flex-direction: column; gap: 0;
-    padding: 6px max(18px, env(safe-area-inset-left)) 16px; background: rgba(10, 17, 41, .98);
-    border-bottom: 1px solid rgba(230, 195, 122, .3);
-    opacity: 0; visibility: hidden; transform: translateY(-8px); transition: .3s var(--ease);
-  }
-  .links.open { opacity: 1; visibility: visible; transform: none; }
-  .links a { padding: 15px 0; font-size: 12px; border-bottom: 1px solid rgba(230, 195, 122, .15); }
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: clamp(14px, 4vw, 38px);
+  flex-wrap: wrap;
+  padding: 16px;
+  background: #101629ed;
+  border-bottom: 1px solid #e2bf754d;
+  backdrop-filter: blur(12px);
 }
 
-/* ---------- ACCUEIL ---------- */
+nav a {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* ACCUEIL */
+
 .hero {
-  position: relative; isolation: isolate; overflow: hidden; text-align: center;
-  min-height: min(900px, 100svh); display: grid; place-items: center;
-  padding: 70px 18px 130px;
+  min-height: 760px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 70px 20px 90px;
   background:
-    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(122, 27, 61, .75), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 90% 70%, rgba(27, 42, 87, .8), transparent 70%),
-    linear-gradient(180deg, #0c1432, var(--navy) 70%);
+    radial-gradient(ellipse at 50% 0%, #78324b 0%, transparent 55%),
+    linear-gradient(145deg, #202d49, #101629 65%, #43182d);
 }
 
-/* Faisceaux de projecteurs */
-.beam {
-  position: absolute; z-index: -2; top: -8%; left: var(--x); width: 34vw; height: 125%; margin-left: -17vw;
-  transform-origin: 50% 0; pointer-events: none; mix-blend-mode: screen; opacity: .55;
-  background: linear-gradient(180deg, var(--c) 0%, transparent 82%);
-  clip-path: polygon(47% 0, 53% 0, 100% 100%, 0 100%);
-  animation: sway var(--d) ease-in-out infinite alternate;
-}
-@keyframes sway { from { transform: rotate(var(--a)); } to { transform: rotate(calc(var(--a) * -1)); } }
-
-/* Lumière qui suit le curseur */
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 35%), rgba(248, 230, 176, .13), transparent 70%);
-}
-/* Grain d'étoiles */
-.hero::after {
-  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .22;
-  background-image: radial-gradient(#fff 1px, transparent 1.2px);
-  background-size: 46px 46px; background-position: 0 0;
-  -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%); mask-image: linear-gradient(180deg, #000, transparent 85%);
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .2;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  background-size: 35px 35px;
 }
 
-.bignum {
-  position: absolute; z-index: -1; left: 50%; top: 46%; transform: translate(-50%, -50%);
-  font: italic 700 clamp(15rem, 52vw, 38rem)/.8 var(--serif); letter-spacing: -.05em; white-space: nowrap;
-  color: rgba(230, 195, 122, .05); -webkit-text-stroke: 1px rgba(230, 195, 122, .28);
-  user-select: none; pointer-events: none;
+.hero-content {
+  width: min(850px, 94vw);
+  padding: clamp(35px, 6vw, 65px) 22px;
+  border: 1px solid var(--gold);
+  outline: 1px solid #e2bf7555;
+  outline-offset: 9px;
+  animation: rise 1s ease both;
 }
 
-/* L'affiche */
-.poster {
-  position: relative; width: min(1020px, 100%); padding: clamp(34px, 6vw, 62px) clamp(16px, 4vw, 40px);
-  border: 1px solid var(--gold); outline: 1px solid rgba(230, 195, 122, .35); outline-offset: 10px;
-  background: linear-gradient(180deg, rgba(10, 17, 41, .55), rgba(74, 15, 38, .35));
-  backdrop-filter: blur(3px);
-  animation: rise 1.2s var(--ease) both;
-}
-.poster i.corner { position: absolute; width: 22px; height: 22px; border: 2px solid var(--gold2); }
-.poster i.c1 { top: -6px; left: -6px; border-right: 0; border-bottom: 0; }
-.poster i.c2 { top: -6px; right: -6px; border-left: 0; border-bottom: 0; }
-.poster i.c3 { bottom: -6px; left: -6px; border-right: 0; border-top: 0; }
-.poster i.c4 { bottom: -6px; right: -6px; border-left: 0; border-top: 0; }
-@keyframes rise { from { opacity: 0; transform: translateY(30px) scale(.98); } to { opacity: 1; transform: none; } }
-
-.eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); }
-.eyebrow b { display: inline-block; animation: twinkle 2.8s ease-in-out infinite; font-weight: 400; }
-.eyebrow b:last-child { animation-delay: 1.4s; }
-@keyframes twinkle { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.75); } }
-
-.names {
-  display: flex; align-items: baseline; justify-content: center; gap: clamp(8px, 2vw, 26px);
-  margin: 26px 0 8px; white-space: nowrap;
-  font: 600 clamp(2.6rem, 9.2vw, 6.6rem)/.9 var(--serif); letter-spacing: .02em;
-}
-.names .amp { font-size: .5em; font-style: italic; font-weight: 500; color: var(--gold); }
-@media (max-width: 560px) {
-  .names { flex-direction: column; align-items: center; gap: 0; font-size: clamp(3rem, 15vw, 4.2rem); line-height: .95; margin-top: 22px; }
-  .names .amp { font-size: .55em; margin: 2px 0; }
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.ornament { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 22px auto; color: var(--gold); }
-.ornament::before, .ornament::after { content: ""; height: 1px; width: min(110px, 20vw); background: linear-gradient(90deg, transparent, var(--gold)); }
-.ornament::after { transform: scaleX(-1); }
-.ornament svg { width: 44px; height: 26px; flex: none; fill: none; stroke: currentColor; }
-
-.hero-sub { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 14px; }
-.hero-sub .age { font: 800 clamp(2rem, 6.5vw, 3.4rem) var(--sans); letter-spacing: 4px; }
-.hero-sub .event { font-size: clamp(9.5px, 1.6vw, 12px); font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--cream); }
-.hero-text { font: italic 500 clamp(1.25rem, 3.2vw, 1.75rem)/1.35 var(--serif); color: #f6e8d7; margin-top: 4px; }
-
-/* Compte à rebours */
-.cd-label { font-size: 10px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin: 34px 0 14px; }
-.countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(7px, 1.6vw, 14px); max-width: 560px; margin: 0 auto; }
-.tb {
-  position: relative; padding: 14px 4px 11px; border: 1px solid rgba(230, 195, 122, .45);
-  background: linear-gradient(180deg, rgba(27, 42, 87, .8), rgba(10, 17, 41, .85));
-  box-shadow: inset 0 0 0 3px rgba(10, 17, 41, .8), inset 0 0 0 4px rgba(230, 195, 122, .12), 0 10px 30px -14px #000;
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
 }
-.tb::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(0, 0, 0, .45); } /* effet tableau à palettes */
-.tb strong { display: block; font: 700 clamp(1.9rem, 6.6vw, 3rem)/1 var(--serif); color: var(--gold2); font-variant-numeric: tabular-nums; }
-.tb span { display: block; margin-top: 6px; font-size: 8px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
 
-/* Boutons */
+/* PIERRE ET BAKKIS SUR UNE LIGNE */
+
+.names-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(8px, 2.5vw, 28px);
+  white-space: nowrap;
+  font: 500 clamp(43px, 9.5vw, 104px)/.82 "Cormorant Garamond", serif;
+  margin: 30px 0 24px;
+  letter-spacing: 0;
+}
+
+.names-title .name {
+  display: inline;
+  font-size: 1em;
+  font-style: normal;
+  color: var(--cream);
+  margin: 0;
+}
+
+.names-title .ampersand {
+  display: inline;
+  font-size: .52em;
+  font-style: italic;
+  color: var(--gold);
+  margin: 0;
+}
+
+/* 18 ANS EN GRAND */
+
+.hero-sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  letter-spacing: 2px;
+  margin: 25px 0;
+  color: #f5e9d8;
+}
+
+.hero-sub .age {
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-shadow: 0 3px 18px #0008;
+}
+
+.hero-sub .event-name {
+  font-size: clamp(9px, 1.5vw, 12px);
+  letter-spacing: 3px;
+}
+
+.gold-line {
+  width: 90px;
+  height: 1px;
+  background: var(--gold);
+  margin: 25px auto;
+}
+
+.hero-text {
+  font: italic 25px "Cormorant Garamond", serif;
+  color: #f6e8d7;
+}
+
+/* COMPTE À REBOURS */
+
+.countdown-wrap {
+  margin: 32px auto 0;
+  max-width: 520px;
+}
+
+.countdown-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+
+.timebox {
+  padding: 13px 5px;
+  border: 1px solid #e2bf7566;
+  background: #10162988;
+}
+
+.timebox strong {
+  display: block;
+  font: 600 clamp(25px, 5vw, 38px) "Cormorant Garamond", serif;
+  color: var(--gold);
+}
+
+.timebox span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* BOUTONS */
+
 .btn {
-  position: relative; display: inline-block; overflow: hidden; cursor: pointer; margin-top: 28px;
-  padding: 17px 30px; border: 1px solid var(--gold); color: var(--navy);
-  font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
-  background: linear-gradient(135deg, var(--gold2), var(--gold) 55%, #cda45a);
-  box-shadow: 0 14px 34px -14px rgba(230, 195, 122, .8); transition: transform .3s var(--ease), box-shadow .3s;
-}
-.btn::after { /* reflet qui traverse le bouton */
-  content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; transform: skewX(-20deg);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .7), transparent); animation: shine 3.8s ease-in-out infinite;
-}
-@keyframes shine { 0%, 55% { left: -60%; } 100% { left: 130%; } }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -14px rgba(230, 195, 122, 1); }
-.btn:disabled { opacity: .65; cursor: wait; transform: none; }
-.btn--wine { color: var(--cream); border-color: var(--wine); background: linear-gradient(135deg, #9a2650, var(--wine) 60%, var(--wine2)); box-shadow: 0 14px 34px -14px rgba(122, 27, 61, .9); }
-
-/* Tapis rouge au bas de l'accueil */
-.carpet { position: absolute; z-index: -1; left: 50%; bottom: 0; width: min(980px, 130%); height: 96px; transform: translateX(-50%); pointer-events: none; }
-.carpet::before, .carpet::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; top: 0; clip-path: polygon(33% 0, 67% 0, 100% 100%, 0 100%); }
-.carpet::before { background: var(--gold); }
-.carpet::after { background: linear-gradient(180deg, #5d1230, #a02a55); clip-path: polygon(33.4% 3px, 66.6% 3px, 98.6% 100%, 1.4% 100%); }
-
-/* Flashs d'appareils photo (jamais plus d'un flash lent et doux à la fois) */
-.flash { position: fixed; inset: 0; z-index: 90; pointer-events: none; background: #fff; opacity: 0; }
-.flash.go { animation: flashgo .9s ease-out; }
-@keyframes flashgo { 0% { opacity: 0; } 8% { opacity: .22; } 100% { opacity: 0; } }
-.spark {
-  position: absolute; z-index: 0; width: var(--s); height: var(--s); margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2); pointer-events: none;
-  background: radial-gradient(circle, #fff 0 7%, rgba(255, 244, 205, .85) 8% 16%, rgba(255, 230, 160, .25) 17% 34%, transparent 60%);
-  opacity: 0; animation: pop .9s ease-out forwards;
-}
-.spark::before, .spark::after { content: ""; position: absolute; left: 50%; top: 50%; background: linear-gradient(90deg, transparent, #fff, transparent); }
-.spark::before { width: 100%; height: 2px; margin-top: -1px; transform: translateX(-50%); }
-.spark::after { width: 2px; height: 100%; margin-left: -1px; transform: translateY(-50%); background: linear-gradient(180deg, transparent, #fff, transparent); }
-@keyframes pop { 0% { opacity: 0; transform: scale(.2) rotate(0); } 25% { opacity: .95; } 100% { opacity: 0; transform: scale(1.1) rotate(30deg); } }
-
-/* ---------- TERRAIN : SCÈNE DE PLAQUAGE ---------- */
-.pitch { position: relative; padding: 34px max(12px, env(safe-area-inset-left)) 0; background: linear-gradient(180deg, var(--navy), #0b1534); text-align: center; overflow: hidden; }
-.pitch__label { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); }
-.pitch svg { display: block; width: 100%; max-width: 1000px; height: auto; margin: 6px auto 0; overflow: visible; }
-.pitch svg * { animation-play-state: paused; }
-.pitch.play svg * { animation-play-state: running; }
-
-/* Durée totale d'une prise : 8 s, tout est synchronisé dessus */
-.actors  { animation: actors 8s linear infinite; }
-.pa      { animation: a-run 8s linear infinite; }
-.pa-r    { animation: a-fall 8s linear infinite; }
-.pb      { animation: b-run 8s linear infinite; }
-.pb-r    { animation: b-lunge 8s linear infinite; }
-.ball-a  { animation: ball-a 8s linear infinite; }
-.ball-b  { animation: ball-b 8s linear infinite; opacity: 0; }
-.burst   { animation: burst 8s ease-out infinite; opacity: 0; transform-box: fill-box; transform-origin: center; }
-.plaque  { animation: plaque 8s ease-out infinite; opacity: 0; transform-box: fill-box; transform-origin: center; }
-.dust    { animation: dust 8s ease-out infinite; opacity: 0; transform-box: fill-box; transform-origin: center; }
-.shake   { animation: shake 8s linear infinite; }
-.bob     { animation: bob .34s ease-in-out infinite alternate; }
-.leg.l1  { transform-origin: -4px -40px; animation: leg1 .34s ease-in-out infinite alternate; }
-.leg.l2  { transform-origin:  4px -40px; animation: leg2 .34s ease-in-out infinite alternate; }
-
-@keyframes actors { 0% { opacity: 0; } 5% { opacity: 1; } 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
-@keyframes bob  { to { transform: translateY(-3px); } }
-@keyframes leg1 { from { transform: rotate(-32deg); } to { transform: rotate(32deg); } }
-@keyframes leg2 { from { transform: rotate(32deg); } to { transform: rotate(-32deg); } }
-
-/* Plaqué : il court, se fait cueillir, tombe en arrière */
-@keyframes a-run  { 0% { transform: translateX(0); } 38% { transform: translateX(330px); } 41% { transform: translateX(338px); } 52% { transform: translateX(292px); } 100% { transform: translateX(292px); } }
-@keyframes a-fall { 0%, 38% { transform: rotate(0); } 42% { transform: rotate(-14deg); } 52% { transform: rotate(-88deg); } 86% { transform: rotate(-88deg); } 94%, 100% { transform: rotate(0); } }
-/* Plaqueur : il fonce, plonge, puis se relève */
-@keyframes b-run   { 0% { transform: translateX(0); } 38% { transform: translateX(-330px); } 41% { transform: translateX(-342px); } 52% { transform: translateX(-372px); } 100% { transform: translateX(-372px); } }
-@keyframes b-lunge { 0%, 38% { transform: rotate(0); } 42% { transform: rotate(34deg); } 52% { transform: rotate(62deg); } 70% { transform: rotate(62deg); } 80%, 100% { transform: rotate(0); } }
-
-/* Le ballon est libéré et rebondit */
-@keyframes ball-a { 0%, 39.9% { opacity: 1; } 40%, 100% { opacity: 0; } }
-@keyframes ball-b {
-  0%, 39.9% { opacity: 0; transform: translate(0, 0) rotate(0); }
-  40%   { opacity: 1; transform: translate(0, 0) rotate(0); animation-timing-function: ease-out; }
-  49%   { transform: translate(70px, -78px) rotate(200deg); animation-timing-function: ease-in; }
-  57%   { transform: translate(128px, 0) rotate(400deg); animation-timing-function: ease-out; }
-  62%   { transform: translate(156px, -26px) rotate(520deg); animation-timing-function: ease-in; }
-  66%   { transform: translate(172px, 0) rotate(600deg); }
-  93%   { opacity: 1; transform: translate(172px, 0) rotate(600deg); }
-  98%, 100% { opacity: 0; transform: translate(172px, 0) rotate(600deg); }
+  display: inline-block;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--navy);
+  padding: 15px 24px;
+  margin-top: 25px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .25s;
 }
 
-/* Impact */
-@keyframes burst  { 0%, 39% { opacity: 0; transform: scale(.2) rotate(0); } 41% { opacity: 1; transform: scale(1.15) rotate(8deg); } 49%, 100% { opacity: 0; transform: scale(1.5) rotate(18deg); } }
-@keyframes plaque { 0%, 40% { opacity: 0; transform: scale(.4) rotate(-6deg); } 44% { opacity: 1; transform: scale(1.15) rotate(-6deg); } 47% { transform: scale(1) rotate(-6deg); } 62% { opacity: 1; transform: scale(1) rotate(-6deg); } 68%, 100% { opacity: 0; transform: scale(1.1) rotate(-6deg); } }
-@keyframes dust   { 0%, 40% { opacity: 0; transform: scale(.3); } 43% { opacity: .55; } 58%, 100% { opacity: 0; transform: scale(2.6); } }
-@keyframes shake  { 0%, 39.5%, 47%, 100% { transform: translate(0, 0); } 41% { transform: translate(-3px, 2px); } 43% { transform: translate(3px, -2px); } 45% { transform: translate(-2px, 1px); } }
-
-/* ---------- BANDEAU PELLICULE ---------- */
-.film {
-  position: relative; overflow: hidden; padding: 24px 0; background: #060b1d;
-  border-block: 1px solid rgba(230, 195, 122, .35);
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-3px);
 }
-.film::before, .film::after {
-  content: ""; position: absolute; left: 0; right: 0; height: 8px;
-  background: repeating-linear-gradient(90deg, rgba(255, 248, 237, .85) 0 12px, transparent 12px 26px);
-  -webkit-mask-image: linear-gradient(0deg, #000 0 100%); opacity: .5;
-}
-.film::before { top: 7px; } .film::after { bottom: 7px; }
-.film__track { display: flex; width: max-content; animation: scroll 38s linear infinite; }
-.film__track span {
-  padding: 0 22px; white-space: nowrap; font: italic 600 clamp(1.1rem, 3vw, 1.5rem) var(--serif); letter-spacing: 1px; color: var(--gold2);
-}
-.film__track span:nth-child(even) { color: var(--gold); font-size: .8em; align-self: center; }
-@keyframes scroll { to { transform: translateX(-50%); } }
 
-/* ---------- SECTIONS ---------- */
-section { padding: clamp(66px, 9vw, 104px) max(18px, env(safe-area-inset-right)) clamp(66px, 9vw, 104px) max(18px, env(safe-area-inset-left)); position: relative; }
-.head { text-align: center; margin-bottom: 46px; }
-.head small { display: block; font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-.head h2 { font: 600 clamp(2.3rem, 7vw, 4rem)/1.05 var(--serif); text-wrap: balance; }
-.head p { margin-top: 14px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: .75; }
+/* PROJECTEURS DE CINÉMA */
 
-/* Apparition au défilement (contenu visible sans JavaScript) */
-.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
-.js .reveal.in { opacity: 1; transform: none; }
-
-/* ---------- LA SOIRÉE ---------- */
-.details { background: linear-gradient(180deg, var(--navy), var(--navy2)); overflow: hidden; }
-.details::before { /* cône de lumière sur la section */
-  content: ""; position: absolute; top: 0; left: 50%; width: min(900px, 120%); height: 100%; transform: translateX(-50%); pointer-events: none;
-  background: radial-gradient(ellipse 50% 60% at 50% 0%, rgba(248, 230, 176, .1), transparent 75%);
+.spotlight {
+  position: absolute;
+  top: -20%;
+  width: 34vw;
+  height: 110%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: .32;
+  filter: blur(2px);
+  transform-origin: top center;
 }
-.grid { position: relative; max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+.spotlight:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 17vw solid transparent;
+  border-right: 17vw solid transparent;
+  border-top: 850px solid #fff0b8;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  opacity: .18;
+}
+
+.spotlight.left {
+  left: 2%;
+  animation: sweepLeft 7s ease-in-out infinite alternate;
+}
+
+.spotlight.right {
+  right: 2%;
+  animation: sweepRight 8s ease-in-out infinite alternate;
+}
+
+@keyframes sweepLeft {
+  from { transform: rotate(-19deg); }
+  to { transform: rotate(17deg); }
+}
+
+@keyframes sweepRight {
+  from { transform: rotate(19deg); }
+  to { transform: rotate(-17deg); }
+}
+
+/* SECTIONS */
+
+section {
+  padding: 82px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font: 500 clamp(38px, 6vw, 52px) "Cormorant Garamond", serif;
+  color: var(--gold);
+  margin: 0 0 12px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: .75;
+  margin: 0 0 42px;
+}
+
+/* INFORMATIONS */
+
+.details {
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.details .section-title {
+  color: var(--wine);
+}
+
+.grid {
+  max-width: 950px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
 .card {
-  position: relative; padding: 36px 22px 32px; text-align: center; border: 1px solid rgba(230, 195, 122, .4);
-  background: linear-gradient(160deg, rgba(27, 42, 87, .75), rgba(74, 15, 38, .55));
-  transition: transform .45s var(--ease), box-shadow .45s, border-color .3s;
-}
-.card::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(230, 195, 122, .15); pointer-events: none; }
-.card:hover { transform: translateY(-8px) rotate(-.4deg); border-color: var(--gold); box-shadow: 0 24px 50px -22px rgba(230, 195, 122, .5); }
-.card .kick { font-size: 10px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
-.card h3 { font: 600 1.7rem/1.1 var(--serif); color: var(--gold2); margin: 10px 0 12px; }
-.card p { font-size: 14px; line-height: 1.75; color: #efe3d0; }
-.card .big { font: 700 5.2rem/.9 var(--serif); }
-.card .ico { width: 52px; height: 52px; margin: 0 auto; color: var(--gold); fill: none; stroke: currentColor; stroke-width: 1.4; display: block; }
-
-/* Scénario de la soirée */
-.scenes { position: relative; max-width: 780px; margin: 70px auto 0; }
-.scenes::before { content: ""; position: absolute; left: 22px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(180deg, var(--gold), rgba(230, 195, 122, .1)); }
-.scene { position: relative; padding: 0 0 34px 68px; }
-.scene:last-child { padding-bottom: 0; }
-.scene__no {
-  position: absolute; left: 0; top: 0; width: 45px; height: 45px; border-radius: 50%; display: grid; place-items: center;
-  background: var(--navy); border: 1px solid var(--gold); font: 700 1.3rem var(--serif); color: var(--gold2);
-  box-shadow: 0 0 0 5px var(--navy2);
-}
-.scene small { font-size: 10px; font-weight: 500; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); }
-.scene h3 { font: 600 1.8rem/1.15 var(--serif); margin: 2px 0 4px; }
-.scene p { font-size: 14px; color: #efe3d0; }
-
-/* ---------- TENUE ---------- */
-.dress { text-align: center; background: radial-gradient(ellipse 70% 80% at 50% 0%, #8f2349, var(--wine2) 65%, #2d0919); overflow: hidden; }
-.dress::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .25; background: repeating-linear-gradient(0deg, transparent 0 30px, rgba(230, 195, 122, .25) 30px 31px); -webkit-mask-image: linear-gradient(180deg, transparent, #000 50%, transparent); mask-image: linear-gradient(180deg, transparent, #000 50%, transparent); }
-.dress-box { position: relative; max-width: 880px; margin: 0 auto; padding: clamp(30px, 5vw, 56px) clamp(16px, 4vw, 40px); border: 1px solid var(--gold); background: rgba(10, 17, 41, .55); }
-.dress-box::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(230, 195, 122, .25); pointer-events: none; }
-.dress-code { font: 700 clamp(1.15rem, 3.8vw, 1.9rem)/1.3 var(--serif); letter-spacing: .1em; text-transform: uppercase; text-wrap: balance; }
-.looks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 30px 0; }
-.look { padding: 24px 16px; border: 1px solid rgba(230, 195, 122, .4); background: rgba(122, 27, 61, .35); }
-.look svg { width: 54px; height: 54px; fill: none; stroke: var(--gold); stroke-width: 1.4; display: block; margin: 0 auto 8px; }
-.look h3 { font: 600 1.6rem var(--serif); color: var(--gold2); }
-.look p { font-size: 13px; opacity: .9; }
-.quip { font: italic 600 clamp(1.3rem, 3.6vw, 1.8rem)/1.35 var(--serif); color: var(--gold2); text-wrap: balance; }
-.dress-box .fine { margin-top: 18px; font-size: 13px; opacity: .85; }
-@media (max-width: 560px) { .looks { grid-template-columns: minmax(0, 1fr); } }
-
-/* ---------- RSVP : BILLET DE CINÉMA ---------- */
-.form-section { background: linear-gradient(180deg, var(--navy2), var(--navy)); }
-.ticket {
-  position: relative; max-width: 660px; margin: 0 auto; padding: clamp(26px, 5vw, 44px) clamp(18px, 5vw, 44px) clamp(28px, 5vw, 40px);
-  color: var(--navy); background: var(--cream);
-  box-shadow: 0 30px 70px -28px #000, 0 0 0 1px var(--gold);
-  background-image: linear-gradient(180deg, rgba(122, 27, 61, .06), transparent 18%);
-}
-.ticket::before, .ticket::after { /* encoches */
-  content: ""; position: absolute; top: 108px; width: 28px; height: 28px; border-radius: 50%; background: var(--navy2);
-  box-shadow: inset 0 0 0 1px var(--gold);
-}
-.ticket::before { left: -14px; } .ticket::after { right: -14px; }
-.ticket__top { text-align: center; padding-bottom: 28px; border-bottom: 2px dashed rgba(122, 27, 61, .4); margin: 0 14px 6px; }
-.ticket__top small { font-size: 10px; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; color: var(--wine); }
-.ticket__top b { display: block; font: 700 clamp(1.7rem, 5vw, 2.4rem)/1.1 var(--serif); color: var(--wine); margin-top: 4px; }
-.ticket label, .ticket legend { display: block; margin: 22px 0 8px; padding: 0; color: var(--wine); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
-.ticket fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
-.ticket input[type="text"], .ticket textarea {
-  width: 100%; padding: 15px 14px; border: 1px solid #cdb27a; border-radius: 2px; background: #fffdf8; color: var(--navy); outline: none; font-weight: 400;
-  transition: border-color .25s, box-shadow .25s;
-}
-.ticket input::placeholder { color: #9a8f80; }
-.ticket input:focus { border-color: var(--wine); box-shadow: 0 0 0 3px rgba(122, 27, 61, .15); }
-.ticket .bad { border-color: #c0243e !important; }
-.name-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-@media (max-width: 560px) { .name-grid { grid-template-columns: minmax(0, 1fr); gap: 0; } }
-.err { color: #b01634; font-size: 12px; margin-top: 6px; font-weight: 500; }
-.err:empty { display: none; }
-
-.choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-@media (max-width: 560px) { .choice { grid-template-columns: minmax(0, 1fr); } }
-.choice input { position: absolute; opacity: 0; pointer-events: none; }
-.choice label {
-  margin: 0; min-height: 68px; display: flex; align-items: center; justify-content: center; text-align: center; gap: 8px; cursor: pointer;
-  padding: 12px; border: 1px solid #cdb27a; background: #fffdf8; color: var(--navy);
-  font: 700 1.2rem/1.2 var(--serif); letter-spacing: 0; text-transform: none; transition: all .3s var(--ease);
-}
-.choice label:hover { border-color: var(--wine); transform: translateY(-2px); }
-.choice input:checked + label { background: var(--wine); border-color: var(--wine); color: var(--cream); box-shadow: 0 12px 26px -14px var(--wine); }
-.choice input:focus-visible + label { outline: 2px solid var(--wine); outline-offset: 3px; }
-
-.stepper { display: inline-flex; border: 1px solid #cdb27a; background: #fffdf8; }
-.stepper button { width: 54px; border: 0; background: none; font-size: 1.7rem; color: var(--wine); cursor: pointer; }
-.stepper button:hover { background: rgba(122, 27, 61, .08); }
-.stepper output { min-width: 96px; display: grid; place-items: center; padding: 8px; border-inline: 1px solid #cdb27a; font: 700 1.2rem var(--serif); color: var(--navy); }
-.ticket .btn { width: 100%; margin-top: 30px; }
-.form-message { text-align: center; line-height: 1.7; margin-top: 18px; font-size: 14px; font-weight: 500; color: var(--wine); }
-.form-message:empty { display: none; }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-
-/* ---------- PLAYLIST ---------- */
-.playlist { background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(122, 27, 61, .5), transparent 70%), var(--navy); overflow: hidden; }
-.vinyl { position: absolute; right: -130px; top: 80px; width: 360px; height: 360px; border-radius: 50%; opacity: .18; pointer-events: none;
-  background: radial-gradient(circle, var(--wine) 0 14%, #000 15% 17%, transparent 18%), repeating-radial-gradient(circle, #111 0 3px, #1d2547 4px 5px);
-  border: 2px solid var(--gold); animation: spin 14s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.box { position: relative; max-width: 640px; margin: 0 auto; padding: clamp(24px, 5vw, 40px); border: 1px solid var(--gold); background: rgba(10, 17, 41, .8); backdrop-filter: blur(4px); box-shadow: 0 24px 60px -30px #000; }
-.box::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(230, 195, 122, .2); pointer-events: none; }
-.box label { display: block; margin-bottom: 8px; color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
-.box input[type="text"] { width: 100%; padding: 16px 14px; background: var(--cream); border: 1px solid var(--gold); border-radius: 2px; color: var(--navy); outline: none; font-weight: 400; }
-.box input:focus { box-shadow: 0 0 0 3px rgba(230, 195, 122, .35); }
-.box .help { margin-top: 12px; font-size: 12px; opacity: .75; }
-.box .btn { width: 100%; }
-.box .form-message { color: var(--gold2); }
-.mine { margin-top: 30px; }
-.mine:empty { display: none; }
-.mine h3 { font: 600 1.4rem var(--serif); color: var(--gold2); text-align: center; margin-bottom: 8px; }
-.mine ul { list-style: none; padding: 0; margin: 0; border-top: 1px solid rgba(230, 195, 122, .3); }
-.mine li { padding: 12px 4px; border-bottom: 1px solid rgba(230, 195, 122, .2); font: 500 1.25rem var(--serif); overflow-wrap: anywhere; animation: rise .6s var(--ease) both; }
-.mine li::before { content: "♪"; color: var(--gold); margin-right: 12px; font-size: 1rem; }
-
-/* ---------- GÉNÉRIQUE DE FIN ---------- */
-footer { text-align: center; padding: 70px max(18px, env(safe-area-inset-right)) 54px max(18px, env(safe-area-inset-left)); background: #060a1c; border-top: 1px solid rgba(230, 195, 122, .35); }
-.credits { display: grid; gap: 22px; max-width: 560px; margin: 0 auto 40px; }
-.credits div small { display: block; font-size: 9px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
-.credits div b { font: 600 1.35rem var(--serif); color: var(--cream); }
-footer .end { font: italic 600 2rem var(--serif); }
-footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: .6; }
-
-/* ---------- CONFETTIS ---------- */
-#confetti-layer { position: fixed; inset: 0; z-index: 100; overflow: hidden; pointer-events: none; }
-.confetti { position: absolute; top: -18px; width: 9px; height: 15px; opacity: .95; animation: fall 3s ease-in forwards; }
-@keyframes fall { to { transform: translate3d(var(--drift), 110vh, 0) rotate(900deg); opacity: .25; } }
-
-/* ---------- MOBILE ---------- */
-@media (max-width: 760px) {
-  .grid { grid-template-columns: minmax(0, 1fr); max-width: 460px; }
-  .beam:nth-of-type(2), .beam:nth-of-type(3) { display: none; }
-  .beam { width: 70vw; margin-left: -35vw; }
-  .carpet { height: 70px; }
-  .vinyl { width: 240px; height: 240px; right: -110px; }
-  .hero { padding-bottom: 100px; }
+  background: white;
+  border: 1px solid #d8b66d;
+  padding: 28px 18px;
+  text-align: center;
+  transition: .25s;
 }
 
-/* ---------- MOUVEMENT RÉDUIT : pas de flashs, pas de défilement ---------- */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  .film__track { animation: none; }
-  .js .reveal { opacity: 1; transform: none; }
-  .flash, .spark, #confetti-layer { display: none; }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #10162918;
+}
+
+.symbol {
+  font-size: 27px;
+  color: var(--wine);
+}
+
+.card h3 {
+  font: 600 25px "Cormorant Garamond", serif;
+  color: var(--wine);
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* DRESS CODE */
+
+.dress {
+  text-align: center;
+  background: linear-gradient(135deg, var(--wine), #351629);
+}
+
+.dress-box {
+  max-width: 760px;
+  margin: auto;
+  border: 1px solid var(--gold);
+  padding: 35px 25px;
+}
+
+.dress h3 {
+  font: 600 34px "Cormorant Garamond", serif;
+  color: var(--gold);
+  margin: 0 0 12px;
+}
+
+.dress p {
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 10px 0;
+}
+
+.dress .highlight {
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* FORMULAIRE PRÉSENCE */
+
+.form-section {
+  background: var(--navy2);
+}
+
+.form-box {
+  max-width: 620px;
+  margin: auto;
+  padding: clamp(22px, 5vw, 38px);
+  background: #101629;
+  border: 1px solid #e2bf7590;
+  box-shadow: 0 18px 50px #0003;
+}
+
+.form-box label {
+  display: block;
+  margin: 20px 0 8px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 14px;
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  color: var(--navy);
+  outline: none;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+  box-shadow: 0 0 0 3px #e2bf7538;
+}
+
+.name-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-box .btn {
+  width: 100%;
+}
+
+.form-message {
+  text-align: center;
+  color: var(--gold);
+  line-height: 1.7;
+  margin: 18px 0 0;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* PLAYLIST */
+
+.playlist {
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.playlist .section-title {
+  color: var(--wine);
+}
+
+.playlist .form-box {
+  background: #fff;
+  border-color: var(--gold);
+  box-shadow: 0 15px 40px #10162912;
+}
+
+.playlist .form-box label {
+  color: var(--wine);
+}
+
+.playlist .form-box input {
+  background: #fffaf1;
+}
+
+.playlist .btn {
+  background: var(--wine);
+  border-color: var(--wine);
+  color: white;
+}
+
+.playlist .btn:hover {
+  background: white;
+  color: var(--wine);
+}
+
+.playlist .form-message {
+  color: var(--wine);
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 42px 20px;
+  background: #090f1d;
+  color: var(--gold);
+  font: 22px "Cormorant Garamond", serif;
+}
+
+footer small {
+  display: block;
+  font: 9px Montserrat, sans-serif;
+  letter-spacing: 3px;
+  margin-top: 13px;
+}
+
+/* CONFETTIS */
+
+#confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.confetti {
+  position: absolute;
+  top: -15px;
+  width: 9px;
+  height: 14px;
+  opacity: .95;
+  animation: fall 2.7s ease-in forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(850deg);
+    opacity: .2;
+  }
+}
+
+/* VERSION MOBILE */
+
+@media(max-width:700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 700px;
+  }
+
+  .spotlight {
+    opacity: .2;
+  }
+
+  .name-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    gap: 13px;
+  }
+
+  nav a {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  section {
+    padding: 65px 16px;
+  }
+}
+
+@media(max-width:420px) {
+  .names-title {
+    gap: 6px;
+    font-size: clamp(35px, 9vw, 43px);
+  }
+
+  .hero-sub .event-name {
+    letter-spacing: 1px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *:before, *:after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="flash" id="flash" aria-hidden="true"></div>
 <div id="confetti-layer" aria-hidden="true"></div>
 
-<!-- ============ NAVIGATION ============ -->
 <nav>
-  <a class="brand" href="#accueil" aria-label="Accueil">P<i>&</i>B</a>
-  <button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
-  <div class="links" id="links">
-    <a href="#accueil">Accueil</a>
-    <a href="#infos">La soirée</a>
-    <a href="#dresscode">Tenue</a>
-    <a href="#rsvp">Présence</a>
-    <a href="#playlist">Playlist</a>
-  </div>
+  <a href="#accueil">Accueil</a>
+  <a href="#infos">La soirée</a>
+  <a href="#dresscode">Tenue</a>
+  <a href="#rsvp">Présence</a>
+  <a href="#playlist">Playlist</a>
 </nav>
 
-<!-- ============ ACCUEIL ============ -->
+<!-- ACCUEIL -->
+
 <header class="hero" id="accueil">
 
-  <!-- projecteurs -->
-  <div class="beam" style="--x:12%; --c:rgba(255,236,170,.55); --a:-20deg; --d:7s"></div>
-  <div class="beam" style="--x:38%; --c:rgba(255,255,255,.32); --a:16deg;  --d:9s"></div>
-  <div class="beam" style="--x:64%; --c:rgba(255,236,170,.5);  --a:-15deg; --d:8s"></div>
-  <div class="beam" style="--x:90%; --c:rgba(255,150,180,.38); --a:21deg;  --d:6.5s"></div>
+  <div class="spotlight left"></div>
+  <div class="spotlight right"></div>
 
-  <div class="bignum" aria-hidden="true">18</div>
+  <div class="hero-content">
 
-  <div class="poster">
-    <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+    <p class="eyebrow">✦ VOUS ÊTES INVITÉS ✦</p>
 
-    <p class="eyebrow"><b>✦</b>&nbsp; Vous êtes invités &nbsp;<b>✦</b></p>
-
-    <h1 class="names gold-text">
-      <span>PIERRE</span><span class="amp">&</span><span>BAKKIS</span>
+    <h1 class="names-title">
+      <span class="name">PIERRE</span>
+      <span class="ampersand">&</span>
+      <span class="name">BAKKIS</span>
     </h1>
 
-    <p class="hero-sub">
-      <span class="age gold-text">18 ANS</span>
-    </p>
+    <div class="gold-line"></div>
 
-    <div class="ornament" aria-hidden="true">
-      <!-- ballon de rugby -->
-      <svg viewBox="0 0 120 70"><ellipse cx="60" cy="35" rx="54" ry="29" transform="rotate(-18 60 35)" stroke-width="2.6"/><path d="M33 53L87 17" stroke-width="2.4"/><path d="M46 38l5 6M54 32l5 6M62 26l5 6M70 20l5 6" stroke-width="2.2"/></svg>
-    </div>
+    <p class="hero-sub">
+      <span class="age">18 ANS</span>
+      <span class="event-name">· LE GRAND GALA DU TAPIS ROUGE</span>
+    </p>
 
     <p class="hero-text">
       Deux anniversaires, un château,<br>
       et une nuit digne du grand écran.
     </p>
 
-    <p class="cd-label" id="cdLabel">Compte à rebours avant le grand soir</p>
-    <div class="countdown" id="countdown" role="timer" aria-labelledby="cdLabel">
-      <div class="tb"><strong id="days">000</strong><span>Jours</span></div>
-      <div class="tb"><strong id="hours">00</strong><span>Heures</span></div>
-      <div class="tb"><strong id="minutes">00</strong><span>Minutes</span></div>
-      <div class="tb"><strong id="seconds">00</strong><span>Secondes</span></div>
+    <div class="countdown-wrap">
+
+      <div class="countdown-label">
+        COMPTE À REBOURS AVANT LE GRAND SOIR
+      </div>
+
+      <div class="countdown" id="countdown">
+
+        <div class="timebox">
+          <strong id="days">000</strong>
+          <span>Jours</span>
+        </div>
+
+        <div class="timebox">
+          <strong id="hours">00</strong>
+          <span>Heures</span>
+        </div>
+
+        <div class="timebox">
+          <strong id="minutes">00</strong>
+          <span>Minutes</span>
+        </div>
+
+        <div class="timebox">
+          <strong id="seconds">00</strong>
+          <span>Secondes</span>
+        </div>
+
+      </div>
     </div>
 
-    <a href="#rsvp" class="btn">Je confirme ma présence ✦</a>
-  </div>
+    <a href="#rsvp" class="btn">
+      Je confirme ma présence ✦
+    </a>
 
-  <div class="carpet" aria-hidden="true"></div>
+  </div>
 </header>
 
-<!-- ============ TERRAIN : PLAQUAGE ============ -->
-<div class="pitch" id="pitch">
-  <p class="pitch__label">✦ Échauffement avant le gala ✦</p>
+<!-- INFORMATIONS -->
 
-  <svg viewBox="0 0 800 230" role="img" aria-label="Un joueur de rugby se fait plaquer sous les poteaux, le ballon rebondit.">
-    <defs>
-      <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#1b2a57" stop-opacity=".55"/><stop offset="1" stop-color="#1b2a57" stop-opacity="0"/>
-      </linearGradient>
-      <!-- un joueur : pieds en (0,0), regarde vers la droite -->
-      <g id="player">
-        <g class="leg l2"><rect x="0" y="-40" width="9" height="40" rx="4.5" fill="#d9b48a"/><rect x="-1" y="-6" width="12" height="6" rx="3" fill="#0a1129"/></g>
-        <g class="leg l1"><rect x="-9" y="-40" width="9" height="40" rx="4.5" fill="#e8c9a0"/><rect x="-10" y="-6" width="12" height="6" rx="3" fill="#0a1129"/></g>
-        <g class="bob">
-          <rect x="-13" y="-46" width="26" height="14" rx="5" fill="#0a1129"/>
-          <rect x="-13" y="-80" width="26" height="40" rx="11" fill="var(--j1)"/>
-          <rect x="-13" y="-66" width="26" height="4.5" fill="var(--j2)"/>
-          <rect x="-13" y="-57" width="26" height="4.5" fill="var(--j2)"/>
-          <circle cx="1" cy="-90" r="9.5" fill="#e8c9a0"/>
-          <path d="M-8.5 -93a9.5 9.5 0 0118 0z" fill="var(--j2)"/>
-        </g>
-      </g>
-      <g id="ball"><ellipse rx="11" ry="7" fill="#b9652a" transform="rotate(-20)"/><path d="M-5 -1l10 -3M-3 2l7 -2" stroke="#fff8ed" stroke-width="1.4" stroke-linecap="round" transform="rotate(-20)"/></g>
-    </defs>
-
-    <!-- poteaux -->
-    <g stroke="#e6c37a" stroke-width="3" stroke-linecap="round" fill="none" opacity=".4">
-      <path d="M52 190V36M110 190V36M52 118h58M81 190v-72"/>
-      <path d="M690 190V36M748 190V36M690 118h58M719 190v-72"/>
-    </g>
-    <!-- terrain -->
-    <rect x="0" y="190" width="800" height="40" fill="url(#grass)"/>
-    <path d="M0 190H800" stroke="#e6c37a" stroke-width="2"/>
-    <path d="M200 190v40M400 190v40M600 190v40" stroke="#e6c37a" stroke-opacity=".35" stroke-width="2" stroke-dasharray="6 6"/>
-
-    <g class="shake">
-      <!-- poussière à l'impact -->
-      <g fill="#f8e6b0">
-        <circle class="dust" cx="372" cy="182" r="14"/>
-        <circle class="dust" cx="420" cy="184" r="11" style="animation-delay:.05s"/>
-        <circle class="dust" cx="338" cy="184" r="9"  style="animation-delay:.1s"/>
-      </g>
-
-      <g class="actors">
-        <!-- Joueur A : maillot bordeaux, porte le ballon -->
-        <g transform="translate(40 190)"><g class="pa"><g class="pa-r" style="--j1:#8a1f46;--j2:#e6c37a">
-          <use href="#player"/>
-          <rect x="3" y="-72" width="22" height="9" rx="4.5" fill="#e8c9a0"/>
-          <g class="ball-a"><use href="#ball" x="26" y="-62"/></g>
-        </g></g></g>
-
-        <!-- Joueur B : maillot bleu, plaque (regarde à gauche) -->
-        <g transform="translate(760 190)"><g class="pb"><g class="pb-r" style="--j1:#2b4a9a;--j2:#fff8ed">
-          <g transform="scale(-1 1)">
-            <use href="#player"/>
-            <rect x="3" y="-70" width="26" height="9" rx="4.5" fill="#e8c9a0"/>
-          </g>
-        </g></g></g>
-      </g>
-
-      <!-- ballon libéré -->
-      <g transform="translate(386 130)"><g class="ball-b"><use href="#ball"/></g></g>
-
-      <!-- éclat + texte -->
-      <polygon class="burst" fill="#f8e6b0" points="400,70 411,100 442,92 424,118 452,136 418,138 424,170 400,150 376,170 382,138 348,136 376,118 358,92 389,100"/>
-      <text class="plaque" x="400" y="52" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="700" font-size="44" fill="#e6c37a" stroke="#0a1129" stroke-width="5" paint-order="stroke">PLAQUÉ !</text>
-    </g>
-  </svg>
-</div>
-
-<!-- ============ BANDEAU PELLICULE ============ -->
-<div class="film" aria-hidden="true">
-  <div class="film__track" id="filmTrack">
-    <span>Tapis rouge</span><span>✦</span><span>Tenue de gala exigée</span><span>✦</span><span>Essai transformé</span><span>✦</span><span>Troisième mi-temps</span><span>✦</span><span>18 ans</span><span>✦</span>
-  </div>
-</div>
-
-<!-- ============ LA SOIRÉE ============ -->
 <section class="details" id="infos">
-  <div class="head reveal">
-    <small>Ce qu'il faut savoir</small>
-    <h2 class="gold-text">La soirée</h2>
-    <p>Les infos à retenir</p>
-  </div>
+
+  <h2 class="section-title">La soirée</h2>
+
+  <p class="section-subtitle">
+    LES INFOS À RETENIR POUR LA SOIRÉE
+  </p>
 
   <div class="grid">
-    <article class="card reveal">
-      <div class="kick">La date</div>
-      <div class="big gold-text">20</div>
-      <h3>février 2027</h3>
-      <p>Un samedi soir.<br>Bloque-le dans ton agenda !</p>
+
+    <article class="card">
+      <div class="symbol">✧</div>
+      <h3>La date</h3>
+      <p>20 février 2027</p>
     </article>
 
-    <article class="card reveal">
-      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42V20l4-3v-5l4 3 4-3v5l6-5 6 5v-5l4 3 4-3v5l4 3v22z"/><path d="M20 42V30a4 4 0 018 0v12"/></svg>
-      <div class="kick" style="margin-top:14px">Le lieu</div>
-      <h3>Dans un château</h3>
-      <p>Le décor est planté !<br>L'adresse arrive très vite.</p>
+    <article class="card">
+      <div class="symbol">⌖</div>
+      <h3>Le lieu</h3>
+      <p>Dans un château<br>Le décor est planté !</p>
     </article>
 
-    <article class="card reveal">
-      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V6M38 40V6M10 22h28"/><path d="M10 22v-0M24 22v18"/></svg>
-      <div class="kick" style="margin-top:14px">Au programme</div>
-      <h3>Gala &amp; surprises</h3>
-      <p>Musique, flashs, projecteurs<br>et troisième mi-temps !</p>
+    <article class="card">
+      <div class="symbol">✦</div>
+      <h3>Au programme</h3>
+      <p>Gala, musique, surprises<br>et troisième mi-temps !</p>
     </article>
-  </div>
 
-  <div class="scenes">
-    <div class="scene reveal">
-      <div class="scene__no">1</div>
-      <small>Scène un</small>
-      <h3>La montée des marches</h3>
-      <p>Tapis rouge, flashs et photos. Sors ta plus belle entrée.</p>
-    </div>
-    <div class="scene reveal">
-      <div class="scene__no">2</div>
-      <small>Scène deux</small>
-      <h3>Le grand gala</h3>
-      <p>Costards, robes de soirée, coupes levées et surprises pour les deux héros.</p>
-    </div>
-    <div class="scene reveal">
-      <div class="scene__no">3</div>
-      <small>Scène trois</small>
-      <h3>La troisième mi-temps</h3>
-      <p>La piste, ta playlist et de l'énergie à revendre jusqu'au bout de la nuit.</p>
-    </div>
   </div>
 </section>
 
-<!-- ============ TENUE ============ -->
+<!-- TENUE -->
+
 <section class="dress" id="dresscode">
-  <div class="head reveal">
-    <small>Dress code</small>
-    <h2 class="gold-text">Place au glamour !</h2>
-    <p>Ce soir, vous êtes les stars</p>
-  </div>
 
-  <div class="dress-box reveal">
-    <p class="dress-code gold-text">Tenue de gala<br>Robe de soirée &amp; costard exigés</p>
+  <h2 class="section-title">Place au glamour !</h2>
 
-    <div class="looks">
-      <div class="look">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 6l-4 10 6 4-8 24h24l-8-24 6-4-4-10"/><path d="M18 6h12"/></svg>
-        <h3>Robes de soirée</h3>
-        <p>Longues, brillantes, spectaculaires.</p>
-      </div>
-      <div class="look">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 6l8 10 8-10 10 6-4 30H10L6 12z"/><path d="M24 16v26M20 24l4 3 4-3"/></svg>
-        <h3>Costards</h3>
-        <p>Nœud papillon, chaussures cirées.</p>
-      </div>
-    </div>
+  <p class="section-subtitle">
+    CE SOIR, VOUS ÊTES LES STARS
+  </p>
 
-    <p class="quip">« Plaquages sur le terrain, élégance sur le dancefloor. »</p>
-    <p class="fine">Et surtout, garde ton énergie pour la troisième mi-temps ! 🏉</p>
+  <div class="dress-box">
+
+    <h3>Tapis rouge · Tenue de gala</h3>
+
+    <p>
+      Sortez vos plus belles tenues :
+      robes de soirée, costumes, belles chaussures…
+      On veut du glamour et du chic !
+    </p>
+
+    <div class="gold-line"></div>
+
+    <p class="highlight">
+      Préparez votre meilleure entrée :
+      les projecteurs seront braqués sur vous.
+    </p>
+
+    <p>
+      Et surtout, gardez votre énergie pour
+      la troisième mi-temps ! 🏉
+    </p>
+
   </div>
 </section>
 
-<!-- ============ PRÉSENCE ============ -->
-<section class="form-section" id="rsvp">
-  <div class="head reveal">
-    <small>Réponse souhaitée</small>
-    <h2 class="gold-text">Alors, tu viens ?</h2>
-    <p>Promis, on ne juge pas les « non, flemme »</p>
-  </div>
+<!-- PRÉSENCE -->
 
-  <form class="ticket reveal" id="formPresence" novalidate>
-    <div class="ticket__top">
-      <small>Billet d'entrée · Gala des 18 ans</small>
-      <b>Pierre &amp; Bakkis</b>
-    </div>
+<section class="form-section" id="rsvp">
+
+  <h2 class="section-title">Alors, tu viens ?</h2>
+
+  <p class="section-subtitle">
+    PROMIS, ON NE JUGE PAS LES « NON, FLEMME »
+  </p>
+
+  <form class="form-box" id="formPresence">
 
     <div class="name-grid">
+
       <div>
         <label for="prenom">Prénom *</label>
-        <input id="prenom" name="prenom" type="text" maxlength="60" autocomplete="given-name" placeholder="Ton prénom">
-        <p class="err" id="errPrenom"></p>
+        <input
+          id="prenom"
+          name="prenom"
+          required
+          maxlength="60"
+          placeholder="Ton prénom">
       </div>
+
       <div>
         <label for="nom">Nom *</label>
-        <input id="nom" name="nom" type="text" maxlength="60" autocomplete="family-name" placeholder="Ton nom">
-        <p class="err" id="errNom"></p>
+        <input
+          id="nom"
+          name="nom"
+          required
+          maxlength="60"
+          placeholder="Ton nom">
       </div>
+
     </div>
 
-    <fieldset>
-      <legend>Ta réponse *</legend>
-      <div class="choice">
-        <input type="radio" name="presence" id="pOui" value="Oui, je serai là !">
-        <label for="pOui">Oui, je serai là ! 🥂</label>
-        <input type="radio" name="presence" id="pNon" value="Non, flemme">
-        <label for="pNon">Non, flemme 🛋️</label>
-      </div>
-      <p class="err" id="errPresence"></p>
-    </fieldset>
+    <label for="presence">Ta réponse *</label>
+
+    <select id="presence" required>
+
+      <option value="">Choisis ton destin…</option>
+
+      <option value="Oui, je serai là !">
+        Oui, je serai là ! 🥂
+      </option>
+
+      <option value="Non, flemme">
+        Non, flemme 🛋️
+      </option>
+
+    </select>
 
     <div id="blocNombre" class="hidden">
-      <label for="nbMinus">Combien de personnes (toi compris) ?</label>
-      <div class="stepper">
-        <button type="button" id="nbMinus" aria-label="Une personne de moins">−</button>
-        <output id="nbOut" aria-live="polite">1 personne</output>
-        <button type="button" id="nbPlus" aria-label="Une personne de plus">+</button>
-      </div>
+
+      <label for="nombre">
+        Combien de personnes (toi compris) ?
+      </label>
+
+      <select id="nombre">
+        <option value="1">1 personne</option>
+        <option value="2">2 personnes</option>
+        <option value="3">3 personnes</option>
+        <option value="4">4 personnes</option>
+        <option value="5">5 personnes</option>
+        <option value="6">6 personnes</option>
+      </select>
+
     </div>
 
-    <!-- piège anti-robots : doit rester vide -->
-    <div class="hp" aria-hidden="true"><label>Ne pas remplir <input type="text" id="piege" tabindex="-1" autocomplete="off"></label></div>
+    <button class="btn" type="submit" id="btnPresence">
+      Envoyer ma réponse ✨
+    </button>
 
-    <button class="btn btn--wine" type="submit" id="btnPresence">Envoyer ma réponse ✨</button>
-    <p class="form-message" id="resultat" role="status" aria-live="polite"></p>
+    <p class="form-message" id="resultat"
+       role="status" aria-live="polite"></p>
+
   </form>
 </section>
 
-<!-- ============ PLAYLIST ============ -->
+<!-- PLAYLIST -->
+
 <section class="playlist" id="playlist">
-  <div class="vinyl" aria-hidden="true"></div>
 
-  <div class="head reveal">
-    <small>Tu as la main</small>
-    <h2 class="gold-text">La playlist de la soirée</h2>
-    <p>Propose le son qui fera danser tout le monde</p>
-  </div>
+  <h2 class="section-title">La playlist de la soirée</h2>
 
-  <form class="box reveal" id="formMusique" novalidate>
-    <label for="musique">Titre de la musique OU nom de l'artiste</label>
-    <input id="musique" type="text" maxlength="120" placeholder="Ex. Freed From Desire ou Gala">
-    <p class="help">Le titre ou l'artiste suffit. Tu peux aussi renseigner les deux !</p>
+  <p class="section-subtitle">
+    PROPOSEZ LE SON QUI FERA DANSER TOUT LE MONDE
+  </p>
 
-    <button class="btn" type="submit" id="btnMusique">Ajouter à la playlist ♫</button>
-    <p class="form-message" id="messageMusique" role="status" aria-live="polite"></p>
+  <form class="form-box" id="formMusique">
 
-    <div class="mine" id="mine"></div>
+    <label for="musique">
+      Titre de la musique OU nom de l'artiste
+    </label>
+
+    <input
+      id="musique"
+      maxlength="120"
+      placeholder="Ex. Freed From Desire ou Gala">
+
+    <p style="font-size:12px;line-height:1.6;margin:12px 0 0;opacity:.75">
+      Le titre ou l'artiste suffit.
+      Tu peux aussi renseigner les deux !
+    </p>
+
+    <button class="btn" type="submit" id="btnMusique">
+      Ajouter à la playlist ♫
+    </button>
+
+    <p class="form-message" id="messageMusique"
+       role="status" aria-live="polite"></p>
+
   </form>
 </section>
 
-<!-- ============ GÉNÉRIQUE DE FIN ============ -->
+<!-- PIED DE PAGE -->
+
 <footer>
-  <div class="credits">
-    <div><small>Une production</small><b>Pierre &amp; Bakkis</b></div>
-    <div><small>Avec</small><b>Toi, et toute la bande</b></div>
-    <div><small>Costumes</small><b>Gala exigé</b></div>
-    <div><small>Bande originale</small><b>Ta playlist</b></div>
-  </div>
-  <p class="end gold-text">Que cette soirée soit mémorable ! 🏉</p>
-  <p class="fine">Pierre &amp; Bakkis · 18 ans · Une nuit · Deux anniversaires · Des souvenirs inoubliables</p>
+
+  PIERRE & BAKKIS · 18 ANS
+
+  <small>
+    UNE NUIT · DEUX ANNIVERSAIRES · DES SOUVENIRS INOUBLIABLES
+  </small>
+
+  <p style="font:13px Montserrat,sans-serif;margin-top:22px">
+    Que cette soirée soit mémorable ! 🏉
+  </p>
+
 </footer>
 
 <script>
+
 /* =====================================
    CONFIGURATION GOOGLE SHEETS
 ===================================== */
 
-// URL de ton Google Apps Script (inchangée : ton script actuel continue de fonctionner).
+// Remplace cette adresse par ton URL Google Apps Script.
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz19VFGnd65Q6bn_G1RniGhHOhegd-YRuejdvvHo1B5Y_KRE7WyyIPqrLZRvSzrYryN/exec";
-
-// Date de la soirée : 20 février 2027 à minuit (mois 1 = février).
-const targetDate = new Date(2027, 1, 20, 0, 0, 0);
-
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const $ = id => document.getElementById(id);
-document.documentElement.classList.add("js");
-
-
-/* =====================================
-   NAVIGATION MOBILE
-===================================== */
-const burger = $("burger"), links = $("links");
-function setMenu(open) {
-  links.classList.toggle("open", open);
-  burger.setAttribute("aria-expanded", String(open));
-  burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
-}
-burger.addEventListener("click", () => setMenu(!links.classList.contains("open")));
-links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
-document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
 
 
 /* =====================================
    COMPTE À REBOURS
 ===================================== */
+
+// Date : 20 février 2027 à minuit.
+const targetDate = new Date(2027, 1, 20, 0, 0, 0);
+
 function updateCountdown() {
-  const remaining = Math.max(0, targetDate.getTime() - Date.now());
-  const d = Math.floor(remaining / 86400000);
-  const h = Math.floor((remaining % 86400000) / 3600000);
-  const m = Math.floor((remaining % 3600000) / 60000);
-  const s = Math.floor((remaining % 60000) / 1000);
-  $("days").textContent = String(d).padStart(3, "0");
-  $("hours").textContent = String(h).padStart(2, "0");
-  $("minutes").textContent = String(m).padStart(2, "0");
-  $("seconds").textContent = String(s).padStart(2, "0");
-  if (remaining === 0) $("cdLabel").textContent = "C’EST LE GRAND SOIR !";
+
+  const remaining = Math.max(
+    0,
+    targetDate.getTime() - Date.now()
+  );
+
+  const days = Math.floor(remaining / 86400000);
+
+  const hours = Math.floor(
+    (remaining % 86400000) / 3600000
+  );
+
+  const minutes = Math.floor(
+    (remaining % 3600000) / 60000
+  );
+
+  const seconds = Math.floor(
+    (remaining % 60000) / 1000
+  );
+
+  document.getElementById("days").textContent =
+    String(days).padStart(3, "0");
+
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
+
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
+
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
+
+  if (remaining === 0) {
+    document.querySelector(".countdown-label").textContent =
+      "C’EST LE GRAND SOIR !";
+  }
 }
+
 updateCountdown();
+
 setInterval(updateCountdown, 1000);
 
 
 /* =====================================
-   AMBIANCE CINÉMA : flashs, étincelles, lumière qui suit le curseur
-   (désactivée si l'appareil demande moins d'animations)
+   AFFICHAGE DU NOMBRE DE PERSONNES
 ===================================== */
-const hero = document.querySelector(".hero");
-const flash = $("flash");
-let heroVisible = true;
 
-function declencherFlash() {
-  if (reduceMotion) return;
-  flash.classList.remove("go");
-  void flash.offsetWidth;          // relance l'animation
-  flash.classList.add("go");
-}
+const presence = document.getElementById("presence");
 
-function etincelle() {
-  if (reduceMotion || !heroVisible || document.hidden) return;
-  const spark = document.createElement("i");
-  spark.className = "spark";
-  spark.style.left = (6 + Math.random() * 88) + "%";
-  spark.style.top = (8 + Math.random() * 72) + "%";
-  spark.style.setProperty("--s", (46 + Math.random() * 70) + "px");
-  hero.appendChild(spark);
-  setTimeout(() => spark.remove(), 1000);
-}
+const blocNombre = document.getElementById("blocNombre");
 
-if (!reduceMotion) {
-  setInterval(etincelle, 1300);                       // petits flashs d'appareils photo
-  (function flashRare() {                             // flash plein écran, doux et rare
-    setTimeout(() => { if (heroVisible && !document.hidden) declencherFlash(); flashRare(); }, 11000 + Math.random() * 8000);
-  })();
-  setTimeout(declencherFlash, 1400);                  // un flash à l'ouverture du site
+presence.addEventListener("change", () => {
 
-  hero.addEventListener("pointermove", e => {
-    const r = hero.getBoundingClientRect();
-    hero.style.setProperty("--mx", (e.clientX - r.left) + "px");
-    hero.style.setProperty("--my", (e.clientY - r.top) + "px");
-  });
-}
+  blocNombre.classList.toggle(
+    "hidden",
+    !presence.value.startsWith("Oui")
+  );
 
-if ("IntersectionObserver" in window) {
-  new IntersectionObserver(([en]) => { heroVisible = en.isIntersecting; }, { threshold: .1 }).observe(hero);
-}
-
-// La scène de plaquage ne tourne que lorsqu'elle est visible
-const pitch = $("pitch");
-if ("IntersectionObserver" in window) {
-  new IntersectionObserver(([en]) => pitch.classList.toggle("play", en.isIntersecting), { threshold: .25 }).observe(pitch);
-} else {
-  pitch.classList.add("play");
-}
-
-// Duplique le bandeau pour un défilement continu
-const track = $("filmTrack");
-track.append(...[...track.children].map(n => n.cloneNode(true)));
-
-
-/* =====================================
-   APPARITION AU DÉFILEMENT
-===================================== */
-const reveals = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-  }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
-  reveals.forEach((r, i) => { r.style.transitionDelay = ((i % 3) * 110) + "ms"; io.observe(r); });
-} else {
-  reveals.forEach(r => r.classList.add("in"));
-}
+});
 
 
 /* =====================================
    ANIMATION CONFETTIS
 ===================================== */
+
 function lancerConfettis() {
-  if (reduceMotion) return;
-  const layer = $("confetti-layer");
-  const colors = ["#e6c37a", "#f8e6b0", "#a02d50", "#7a1b3d", "#fff8ed", "#2b4a9a"];
-  for (let i = 0; i < 130; i++) {
+
+  const layer = document.getElementById("confetti-layer");
+
+  const colors = [
+    "#e2bf75",
+    "#a02d50",
+    "#fff8ed",
+    "#ffffff",
+    "#d94b65"
+  ];
+
+  for (let i = 0; i < 110; i++) {
+
     const piece = document.createElement("i");
+
     piece.className = "confetti";
+
     piece.style.left = Math.random() * 100 + "vw";
-    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-    piece.style.setProperty("--drift", (Math.random() * 300 - 150) + "px");
-    piece.style.animationDelay = (Math.random() * .7) + "s";
-    piece.style.width = (6 + Math.random() * 6) + "px";
+
+    piece.style.background =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    piece.style.setProperty(
+      "--drift",
+      (Math.random() * 260 - 130) + "px"
+    );
+
+    piece.style.animationDelay =
+      (Math.random() * .65) + "s";
+
+    piece.style.transform =
+      `rotate(${Math.random() * 180}deg)`;
+
     layer.appendChild(piece);
-    setTimeout(() => piece.remove(), 4200);
+
+    setTimeout(() => piece.remove(), 3500);
+
   }
-  declencherFlash();
 }
 
 
 /* =====================================
-   ENVOI DES DONNÉES (Google Sheets)
+   ENVOI DES DONNÉES
 ===================================== */
-async function envoyerDonnees(data, button, message, successText) {
 
-  if (!SCRIPT_URL || SCRIPT_URL.includes("COLLE_ICI")) {
-    message.textContent = "Le formulaire n'est pas encore connecté à Google Sheets. Ajoute l'URL Google Apps Script dans le code.";
+async function envoyerDonnees(
+  data,
+  button,
+  message,
+  successText
+) {
+
+  if (SCRIPT_URL.includes("COLLE_ICI")) {
+
+    message.textContent =
+      "Le formulaire n'est pas encore connecté à Google Sheets. Ajoute l'URL Google Apps Script dans le code.";
+
     return false;
   }
 
   button.disabled = true;
+
   const original = button.textContent;
+
   button.textContent = "Envoi en cours…";
 
   try {
+
     await fetch(SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
       body: JSON.stringify(data)
     });
+
     message.textContent = successText;
+
     lancerConfettis();
+
     return true;
 
   } catch (error) {
-    message.textContent = "Oups, l'envoi n'a pas fonctionné. Réessaie dans un instant.";
+
+    message.textContent =
+      "Oups, l'envoi n'a pas fonctionné. Réessaie dans un instant.";
+
     return false;
 
   } finally {
+
     button.disabled = false;
+
     button.textContent = original;
+
   }
 }
 
@@ -958,108 +1066,88 @@ async function envoyerDonnees(data, button, message, successText) {
 /* =====================================
    FORMULAIRE DE PRÉSENCE
 ===================================== */
-const form = $("formPresence");
-const blocNombre = $("blocNombre");
-let nombre = 1;
 
-function afficherNombre() { $("nbOut").textContent = nombre + (nombre > 1 ? " personnes" : " personne"); }
-$("nbMinus").addEventListener("click", () => { nombre = Math.max(1, nombre - 1); afficherNombre(); });
-$("nbPlus").addEventListener("click", () => { nombre = Math.min(6, nombre + 1); afficherNombre(); });
+document.getElementById("formPresence")
+.addEventListener("submit", async function(e) {
 
-const choix = () => (form.querySelector('input[name="presence"]:checked') || {}).value || "";
-
-form.querySelectorAll('input[name="presence"]').forEach(r => r.addEventListener("change", () => {
-  blocNombre.classList.toggle("hidden", !choix().startsWith("Oui"));
-  $("errPresence").textContent = "";
-}));
-
-function erreur(inputId, errId, texte) {
-  $(errId).textContent = texte;
-  $(inputId).classList.toggle("bad", Boolean(texte));
-}
-["prenom", "nom"].forEach(id => $(id).addEventListener("input", () => erreur(id, id === "prenom" ? "errPrenom" : "errNom", "")));
-
-form.addEventListener("submit", async function (e) {
   e.preventDefault();
-  if ($("piege").value) return;                       // robot : on ignore
 
-  const prenom = $("prenom").value.trim();
-  const nom = $("nom").value.trim();
-  const presence = choix();
-  let ok = true;
-
-  erreur("prenom", "errPrenom", prenom ? "" : "Il nous faut ton prénom !");
-  erreur("nom", "errNom", nom ? "" : "Il nous faut ton nom !");
-  $("errPresence").textContent = presence ? "" : "Choisis ton destin !";
-  if (!prenom || !nom || !presence) ok = false;
-  if (!ok) { $("resultat").textContent = ""; return; }
-
-  // Mêmes champs qu'avant : ton script Google continue de les recevoir.
   const data = {
+
     type: "presence",
-    prenom,
-    nom,
-    presence,
-    nombre: presence.startsWith("Oui") ? String(nombre) : "0"
+
+    prenom: document.getElementById("prenom").value.trim(),
+
+    nom: document.getElementById("nom").value.trim(),
+
+    presence: presence.value,
+
+    nombre: presence.value.startsWith("Oui")
+      ? document.getElementById("nombre").value
+      : "0"
+
   };
 
-  const envoye = await envoyerDonnees(
+  const ok = await envoyerDonnees(
     data,
-    $("btnPresence"),
-    $("resultat"),
-    presence.startsWith("Oui")
+    document.getElementById("btnPresence"),
+    document.getElementById("resultat"),
+
+    data.presence.startsWith("Oui")
       ? "C'est validé ! Prépare ta tenue, les projecteurs t'attendent ! 🥂"
       : "Réponse enregistrée… On gardera une coupe au frais (ou pas) ! 😎"
   );
 
-  if (envoye) {
+  if (ok) {
+
     this.reset();
-    nombre = 1; afficherNombre();
+
     blocNombre.classList.add("hidden");
+
   }
+
 });
 
 
 /* =====================================
    FORMULAIRE PLAYLIST
 ===================================== */
-const mine = $("mine");
-const mesSons = [];
 
-function afficherMesSons() {
-  mine.replaceChildren();
-  if (!mesSons.length) return;
-  const titre = document.createElement("h3");
-  titre.textContent = "Tes propositions";
-  const ul = document.createElement("ul");
-  mesSons.forEach(s => { const li = document.createElement("li"); li.textContent = s; ul.append(li); });
-  mine.append(titre, ul);
-}
+document.getElementById("formMusique")
+.addEventListener("submit", async function(e) {
 
-$("formMusique").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const value = $("musique").value.trim();
-  const message = $("messageMusique");
+  const value =
+    document.getElementById("musique").value.trim();
 
   if (!value) {
-    message.textContent = "Ajoute au moins un titre ou un artiste pour proposer un son !";
+
+    document.getElementById("messageMusique").textContent =
+      "Ajoute au moins un titre ou un artiste pour proposer un son !";
+
     return;
   }
 
-  const envoye = await envoyerDonnees(
-    { type: "musique", musique: value },
-    $("btnMusique"),
-    message,
+  const ok = await envoyerDonnees(
+    {
+      type: "musique",
+      musique: value
+    },
+
+    document.getElementById("btnMusique"),
+
+    document.getElementById("messageMusique"),
+
     "Son ajouté à la sélection ! On compte sur toi pour mettre l'ambiance ! 🎶"
   );
 
-  if (envoye) {
-    mesSons.unshift(value);          // rappel local de ce que TU as proposé
-    afficherMesSons();
+  if (ok) {
     this.reset();
   }
+
 });
+
 </script>
 
 </body>
