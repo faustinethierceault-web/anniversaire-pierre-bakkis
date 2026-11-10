@@ -515,6 +515,31 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
   .photo-track { animation: none; }
 }
 
+
+/* ---------- INFOS DRESS CODE ---------- */
+.dress-colors {
+  position: relative; max-width: 760px; margin: 28px auto 0; padding: 24px 28px;
+  text-align: center; border: 1px solid rgba(230,195,122,.45); border-radius: 16px;
+  background: linear-gradient(145deg, rgba(16,36,67,.8), rgba(61,23,36,.35));
+}
+.dress-colors__label { display:block; color:var(--gold); font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:10px; }
+.dress-colors p { color:var(--cream); line-height:1.7; }
+.dress-colors strong { color:var(--gold2); }
+.color-swatches { display:flex; justify-content:center; gap:12px; margin-top:17px; }
+.swatch { width:28px; height:28px; border-radius:50%; border:2px solid rgba(255,255,255,.7); box-shadow:0 3px 12px #0005; }
+.swatch--navy { background:#102443; } .swatch--white { background:#fffdf8; } .swatch--gold { background:#d8b76e; } .swatch--wine { background:#702b3d; }
+
+/* ---------- TROIS DERNIÈRES SUGGESTIONS MUSICALES ---------- */
+.latest-music { position:relative; max-width:760px; margin:30px auto 0; background:linear-gradient(145deg,rgba(16,36,67,.92),rgba(61,23,36,.62)); border:1px solid rgba(216,183,110,.4); }
+.latest-music h3 { color:var(--gold2); font:600 1.8rem var(--serif); text-align:center; margin:0 0 8px; }
+.latest-music__intro, .latest-music__note { text-align:center; color:rgba(255,253,248,.72); font-size:.85rem; }
+.latest-music ol { list-style:none; counter-reset:songs; padding:0; margin:22px 0 0; display:grid; gap:10px; }
+.latest-music li { counter-increment:songs; display:flex; align-items:center; gap:14px; padding:13px 15px; border:1px solid rgba(230,195,122,.22); border-radius:10px; color:var(--cream); background:rgba(7,23,47,.42); }
+.latest-music li::before { content:counter(songs, decimal-leading-zero); color:var(--gold); font:600 1.15rem var(--serif); }
+.latest-music__empty { justify-content:center; color:rgba(255,253,248,.7) !important; }
+.latest-music__empty::before { content:"♫" !important; }
+@media (max-width:600px) { .dress-colors { padding:20px 16px; } .latest-music { padding:22px 16px; } }
+
 </style>
 </head>
 
@@ -538,11 +563,11 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
   <button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
   <div class="links" id="links">
     <a href="#accueil">Accueil</a>
-    <a href="#infos">La soirée</a>
-    <a href="#dresscode">Tenue</a>
     <a href="#photos">Les stars</a>
+    <a href="#infos">La soirée</a>
     <a href="#rsvp">Présence</a>
     <a href="#playlist">Playlist</a>
+    <a href="#dresscode">Tenue</a>
   </div>
 </nav>
 
@@ -594,6 +619,138 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
   <div class="carpet" aria-hidden="true"></div>
 </header>
 
+<!-- ============ PHOTOS DES DEUX STARS ============ -->
+
+<section class="stars-gallery" id="photos">
+  <div class="head reveal">
+    <small>Les vedettes du soir</small>
+    <h2 class="gold-text">Les deux stars de la soirée</h2>
+    <p>Pierre &amp; Bakkis · 18 ans, ça se fête !</p>
+  </div>
+
+  <div class="photo-marquee reveal" aria-label="Galerie photos de Pierre et Bakkis">
+    <div class="photo-track">
+      <div class="photo-group">
+        <img src="photos/bakkis-1.jpeg" alt="Bakkis" loading="eager">
+        <img src="photos/pierre-1.jpeg" alt="Pierre" loading="eager">
+        <img src="photos/pierre-bakkis-1.jpeg" alt="Pierre et Bakkis" loading="eager">
+        <img src="photos/bakkis-2.jpeg" alt="Bakkis" loading="eager">
+        <img src="photos/pierre-2.jpeg" alt="Pierre" loading="eager">
+        <img src="photos/pierre-bakkis-2.jpeg" alt="Pierre et Bakkis" loading="eager">
+      </div>
+      <!-- Copie identique pour que le défilement boucle sans coupure -->
+      <div class="photo-group" aria-hidden="true">
+        <img src="photos/bakkis-1.jpeg" alt="" loading="eager">
+        <img src="photos/pierre-1.jpeg" alt="" loading="eager">
+        <img src="photos/pierre-bakkis-1.jpeg" alt="" loading="eager">
+        <img src="photos/bakkis-2.jpeg" alt="" loading="eager">
+        <img src="photos/pierre-2.jpeg" alt="" loading="eager">
+        <img src="photos/pierre-bakkis-2.jpeg" alt="" loading="eager">
+      </div>
+    </div>
+  </div>
+
+  <p class="gallery-note">
+    Quelques souvenirs… et encore beaucoup à créer !
+  </p>
+</section>
+<!-- ============ LA SOIRÉE ============ -->
+<section class="details" id="infos">
+  <div class="head reveal">
+    <small>Ce qu'il faut savoir</small>
+    <h2 class="gold-text">La soirée</h2>
+    <p>Les infos à retenir</p>
+  </div>
+
+  <div class="grid">
+    <article class="card reveal">
+      <div class="kick">La date</div>
+      <div class="big gold-text">20</div>
+      <h3>février 2027</h3>
+      <p>Un samedi soir.<br>Bloque-le dans ton agenda !</p>
+    </article>
+
+    <article class="card reveal">
+      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42V20l4-3v-5l4 3 4-3v5l6-5 6 5v-5l4 3 4-3v5l4 3v22z"/><path d="M20 42V30a4 4 0 018 0v12"/></svg>
+      <div class="kick" style="margin-top:14px">Le lieu</div>
+      <h3>Au milieu des vignes</h3>
+      <p>Salle de fête<br>L'adresse arrive très vite.</p>
+    </article>
+
+    <article class="card reveal">
+      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V6M38 40V6M10 22h28"/><path d="M10 22v-0M24 22v18"/></svg>
+      <div class="kick" style="margin-top:14px">Au programme</div>
+      <h3>Soirée gala &amp; surprises</h3>
+      <p>Musique dansante, bar à volonté,<br>repas autour du brasero<br>et jeux surprises.</p>
+    </article>
+  </div>
+
+  <div class="dress-colors reveal">
+    <span class="dress-colors__label">Dress code · Palette de la soirée</span>
+    <p><strong>Chic et élégant :</strong> bleu marine, blanc et doré, avec une touche de rouge bordeaux.</p>
+    <div class="color-swatches" aria-label="Couleurs : bleu marine, blanc, doré et rouge bordeaux">
+      <span class="swatch swatch--navy" title="Bleu marine"></span>
+      <span class="swatch swatch--white" title="Blanc"></span>
+      <span class="swatch swatch--gold" title="Doré"></span>
+      <span class="swatch swatch--wine" title="Rouge bordeaux"></span>
+    </div>
+  </div>
+
+</section>
+<!-- ============ PRÉSENCE ============ -->
+<section class="form-section" id="rsvp">
+  <div class="head reveal">
+    <small>Réponse souhaitée</small>
+    <h2 class="gold-text">Alors, tu viens ?</h2>
+    <p>Promis, on ne juge pas les « non, flemme »</p>
+  </div>
+
+  <form class="ticket reveal" id="formPresence" novalidate>
+    <div class="ticket__top">
+      <small>Billet d'entrée · Gala des 18 ans</small>
+      <b>Pierre &amp; Bakkis</b>
+    </div>
+
+    <div class="name-grid">
+      <div>
+        <label for="prenom">Prénom *</label>
+        <input id="prenom" name="prenom" type="text" maxlength="60" autocomplete="given-name" placeholder="Ton prénom">
+        <p class="err" id="errPrenom"></p>
+      </div>
+      <div>
+        <label for="nom">Nom *</label>
+        <input id="nom" name="nom" type="text" maxlength="60" autocomplete="family-name" placeholder="Ton nom">
+        <p class="err" id="errNom"></p>
+      </div>
+    </div>
+
+    <fieldset>
+      <legend>Ta réponse *</legend>
+      <div class="choice">
+        <input type="radio" name="presence" id="pOui" value="Oui, je serai là !">
+        <label for="pOui">Oui, je serai là ! 🥂</label>
+        <input type="radio" name="presence" id="pNon" value="Non, flemme">
+        <label for="pNon">Non, flemme 🛋️</label>
+      </div>
+      <p class="err" id="errPresence"></p>
+    </fieldset>
+
+    <div id="blocNombre" class="hidden">
+      <label for="nbMinus">Combien de personnes (toi compris) ?</label>
+      <div class="stepper">
+        <button type="button" id="nbMinus" aria-label="Une personne de moins">−</button>
+        <output id="nbOut" aria-live="polite">1 personne</output>
+        <button type="button" id="nbPlus" aria-label="Une personne de plus">+</button>
+      </div>
+    </div>
+
+    <!-- piège anti-robots : doit rester vide -->
+    <div class="hp" aria-hidden="true"><label>Ne pas remplir <input type="text" id="piege" tabindex="-1" autocomplete="off"></label></div>
+
+    <button class="btn btn--wine" type="submit" id="btnPresence">Envoyer ma réponse ✨</button>
+    <p class="form-message" id="resultat" role="status" aria-live="polite"></p>
+  </form>
+</section>
 <!-- ============ TERRAIN : PLAQUAGE ============ -->
 <div class="pitch" id="pitch">
   <p class="pitch__label">✦ Échauffement avant le gala ✦</p>
@@ -663,40 +820,34 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     </g>
   </svg>
 </div>
+<!-- ============ PLAYLIST ============ -->
+<section class="playlist" id="playlist">
+  <div class="vinyl" aria-hidden="true"></div>
 
-<!-- ============ LA SOIRÉE ============ -->
-<section class="details" id="infos">
   <div class="head reveal">
-    <small>Ce qu'il faut savoir</small>
-    <h2 class="gold-text">La soirée</h2>
-    <p>Les infos à retenir</p>
+    <small>Tu as la main</small>
+    <h2 class="gold-text">La playlist de la soirée</h2>
+    <p>Propose le son qui fera danser tout le monde</p>
   </div>
 
-  <div class="grid">
-    <article class="card reveal">
-      <div class="kick">La date</div>
-      <div class="big gold-text">20</div>
-      <h3>février 2027</h3>
-      <p>Un samedi soir.<br>Bloque-le dans ton agenda !</p>
-    </article>
+  <form class="box reveal" id="formMusique" novalidate>
+    <label for="musique">Titre de la musique OU nom de l'artiste</label>
+    <input id="musique" type="text" maxlength="120" placeholder="Ex. Freed From Desire ou Gala">
+    <p class="help">Le titre ou l'artiste suffit. Tu peux aussi renseigner les deux !</p>
 
-    <article class="card reveal">
-      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42V20l4-3v-5l4 3 4-3v5l6-5 6 5v-5l4 3 4-3v5l4 3v22z"/><path d="M20 42V30a4 4 0 018 0v12"/></svg>
-      <div class="kick" style="margin-top:14px">Le lieu</div>
-      <h3>Au milieu des vignes</h3>
-      <p>Salle de fête<br>L'adresse arrive très vite.</p>
-    </article>
+    <button class="btn" type="submit" id="btnMusique">Ajouter à la playlist ♫</button>
+    <p class="form-message" id="messageMusique" role="status" aria-live="polite"></p>
 
-    <article class="card reveal">
-      <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V6M38 40V6M10 22h28"/><path d="M10 22v-0M24 22v18"/></svg>
-      <div class="kick" style="margin-top:14px">Au programme</div>
-      <h3>Soirée gala &amp; surprises</h3>
-      <p>Musique dansante, bar à volonté,<br>repas autour du brasero<br>et jeux surprises.</p>
-    </article>
+    <div class="mine" id="mine"></div>
+  </form>
+
+  <div class="latest-music box reveal" aria-live="polite">
+    <h3>Les 3 dernières idées de musique</h3>
+    <p class="latest-music__intro">Les dernières suggestions partagées par les invités</p>
+    <ol id="latestMusicList"><li class="latest-music__empty">Chargement des suggestions…</li></ol>
+    <p class="latest-music__note" id="latestMusicStatus"></p>
   </div>
-
 </section>
-
 <!-- ============ TENUE ============ -->
 <section class="dress" id="dresscode">
   <div class="head reveal">
@@ -721,121 +872,6 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     </div>
 
   </div>
-</section>
-
-
-<!-- ============ PHOTOS DES DEUX STARS ============ -->
-
-<section class="stars-gallery" id="photos">
-  <div class="head reveal">
-    <small>Les vedettes du soir</small>
-    <h2 class="gold-text">Les deux stars de la soirée</h2>
-    <p>Pierre &amp; Bakkis · 18 ans, ça se fête !</p>
-  </div>
-
-  <div class="photo-marquee reveal" aria-label="Galerie photos de Pierre et Bakkis">
-    <div class="photo-track">
-      <div class="photo-group">
-        <img src="photos/bakkis-1.jpeg" alt="Bakkis" loading="eager">
-        <img src="photos/pierre-1.jpeg" alt="Pierre" loading="eager">
-        <img src="photos/pierre-bakkis-1.jpeg" alt="Pierre et Bakkis" loading="eager">
-        <img src="photos/bakkis-2.jpeg" alt="Bakkis" loading="eager">
-        <img src="photos/pierre-2.jpeg" alt="Pierre" loading="eager">
-        <img src="photos/pierre-bakkis-2.jpeg" alt="Pierre et Bakkis" loading="eager">
-      </div>
-      <!-- Copie identique pour que le défilement boucle sans coupure -->
-      <div class="photo-group" aria-hidden="true">
-        <img src="photos/bakkis-1.jpeg" alt="" loading="eager">
-        <img src="photos/pierre-1.jpeg" alt="" loading="eager">
-        <img src="photos/pierre-bakkis-1.jpeg" alt="" loading="eager">
-        <img src="photos/bakkis-2.jpeg" alt="" loading="eager">
-        <img src="photos/pierre-2.jpeg" alt="" loading="eager">
-        <img src="photos/pierre-bakkis-2.jpeg" alt="" loading="eager">
-      </div>
-    </div>
-  </div>
-
-  <p class="gallery-note">
-    Quelques souvenirs… et encore beaucoup à créer !
-  </p>
-</section>
-
-
-<!-- ============ PRÉSENCE ============ -->
-<section class="form-section" id="rsvp">
-  <div class="head reveal">
-    <small>Réponse souhaitée</small>
-    <h2 class="gold-text">Alors, tu viens ?</h2>
-    <p>Promis, on ne juge pas les « non, flemme »</p>
-  </div>
-
-  <form class="ticket reveal" id="formPresence" novalidate>
-    <div class="ticket__top">
-      <small>Billet d'entrée · Gala des 18 ans</small>
-      <b>Pierre &amp; Bakkis</b>
-    </div>
-
-    <div class="name-grid">
-      <div>
-        <label for="prenom">Prénom *</label>
-        <input id="prenom" name="prenom" type="text" maxlength="60" autocomplete="given-name" placeholder="Ton prénom">
-        <p class="err" id="errPrenom"></p>
-      </div>
-      <div>
-        <label for="nom">Nom *</label>
-        <input id="nom" name="nom" type="text" maxlength="60" autocomplete="family-name" placeholder="Ton nom">
-        <p class="err" id="errNom"></p>
-      </div>
-    </div>
-
-    <fieldset>
-      <legend>Ta réponse *</legend>
-      <div class="choice">
-        <input type="radio" name="presence" id="pOui" value="Oui, je serai là !">
-        <label for="pOui">Oui, je serai là ! 🥂</label>
-        <input type="radio" name="presence" id="pNon" value="Non, flemme">
-        <label for="pNon">Non, flemme 🛋️</label>
-      </div>
-      <p class="err" id="errPresence"></p>
-    </fieldset>
-
-    <div id="blocNombre" class="hidden">
-      <label for="nbMinus">Combien de personnes (toi compris) ?</label>
-      <div class="stepper">
-        <button type="button" id="nbMinus" aria-label="Une personne de moins">−</button>
-        <output id="nbOut" aria-live="polite">1 personne</output>
-        <button type="button" id="nbPlus" aria-label="Une personne de plus">+</button>
-      </div>
-    </div>
-
-    <!-- piège anti-robots : doit rester vide -->
-    <div class="hp" aria-hidden="true"><label>Ne pas remplir <input type="text" id="piege" tabindex="-1" autocomplete="off"></label></div>
-
-    <button class="btn btn--wine" type="submit" id="btnPresence">Envoyer ma réponse ✨</button>
-    <p class="form-message" id="resultat" role="status" aria-live="polite"></p>
-  </form>
-</section>
-
-<!-- ============ PLAYLIST ============ -->
-<section class="playlist" id="playlist">
-  <div class="vinyl" aria-hidden="true"></div>
-
-  <div class="head reveal">
-    <small>Tu as la main</small>
-    <h2 class="gold-text">La playlist de la soirée</h2>
-    <p>Propose le son qui fera danser tout le monde</p>
-  </div>
-
-  <form class="box reveal" id="formMusique" novalidate>
-    <label for="musique">Titre de la musique OU nom de l'artiste</label>
-    <input id="musique" type="text" maxlength="120" placeholder="Ex. Freed From Desire ou Gala">
-    <p class="help">Le titre ou l'artiste suffit. Tu peux aussi renseigner les deux !</p>
-
-    <button class="btn" type="submit" id="btnMusique">Ajouter à la playlist ♫</button>
-    <p class="form-message" id="messageMusique" role="status" aria-live="polite"></p>
-
-    <div class="mine" id="mine"></div>
-  </form>
 </section>
 
 <!-- ============ GÉNÉRIQUE DE FIN ============ -->
@@ -1098,6 +1134,39 @@ form.addEventListener("submit", async function (e) {
 const mine = $("mine");
 const mesSons = [];
 
+async function chargerDernieresMusiques() {
+  const liste = $("latestMusicList");
+  const statut = $("latestMusicStatus");
+  if (!liste) return;
+  try {
+    const response = await fetch(SCRIPT_URL + "?action=lastMusic&v=" + Date.now(), { cache: "no-store" });
+    if (!response.ok) throw new Error("Lecture indisponible");
+    const data = await response.json();
+    const musiques = Array.isArray(data.musiques) ? data.musiques : [];
+    liste.replaceChildren();
+    if (!musiques.length) {
+      const li = document.createElement("li");
+      li.className = "latest-music__empty";
+      li.textContent = "Pas encore de suggestion… À toi d'ouvrir le bal !";
+      liste.append(li);
+      return;
+    }
+    musiques.slice(0, 3).forEach(musique => {
+      const li = document.createElement("li");
+      li.textContent = typeof musique === "string" ? musique : (musique.musique || "Suggestion musicale");
+      liste.append(li);
+    });
+    if (statut) statut.textContent = "Mis à jour automatiquement à l'ouverture de la page.";
+  } catch (error) {
+    liste.replaceChildren();
+    const li = document.createElement("li");
+    li.className = "latest-music__empty";
+    li.textContent = "Les suggestions seront visibles ici dès que la lecture Google Sheets sera activée.";
+    liste.append(li);
+    if (statut) statut.textContent = "";
+  }
+}
+
 function afficherMesSons() {
   mine.replaceChildren();
   if (!mesSons.length) return;
@@ -1130,8 +1199,12 @@ $("formMusique").addEventListener("submit", async function (e) {
     mesSons.unshift(value);          // rappel local de ce que TU as proposé
     afficherMesSons();
     this.reset();
+    chargerDernieresMusiques();
   }
 });
+
+// Charge les trois dernières propositions enregistrées dans Google Sheets.
+chargerDernieresMusiques();
 </script>
 
 </body>
