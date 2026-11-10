@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a1129">
 <title>Pierre & Bakkis — Le grand gala des 18 ans</title>
-<meta name="description" content="Invitation au grand gala des 18 ans de Pierre & Bakkis. Tapis rouge, tenue de gala et troisième mi-temps.">
+<meta name="description" content="Invitation au grand gala des 18 ans de Pierre & Bakkis.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
 
 <style>
 /* ==========================================================================
-   GALA DES 18 ANS — rugby chic, tapis rouge, projecteurs et flashs
+   GALA DES 18 ANS — rugby chic, projecteurs et flashs
    Couleurs et polices : modifie uniquement les variables ci-dessous.
    ========================================================================== */
 :root {
@@ -205,11 +205,6 @@ nav {
 .btn:disabled { opacity: .65; cursor: wait; transform: none; }
 .btn--wine { color: var(--cream); border-color: var(--wine); background: linear-gradient(135deg, #84364a, var(--wine) 60%, var(--wine2)); box-shadow: 0 14px 34px -14px rgba(80, 24, 42, .55); }
 
-/* Tapis rouge au bas de l'accueil */
-.carpet { position: absolute; z-index: -1; left: 50%; bottom: 0; width: min(980px, 130%); height: 96px; transform: translateX(-50%); pointer-events: none; }
-.carpet::before, .carpet::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; top: 0; clip-path: polygon(33% 0, 67% 0, 100% 100%, 0 100%); }
-.carpet::before { background: var(--gold); }
-.carpet::after { background: linear-gradient(180deg, #481b2b, #76283e); clip-path: polygon(33.4% 3px, 66.6% 3px, 98.6% 100%, 1.4% 100%); }
 
 /* Flashs d'appareils photo (jamais plus d'un flash lent et doux à la fois) */
 .flash { position: fixed; inset: 0; z-index: 90; pointer-events: none; background: #fff; opacity: 0; }
@@ -338,7 +333,7 @@ section { padding: clamp(66px, 9vw, 104px) max(18px, env(safe-area-inset-right))
 .ticket__top b { display: block; font: 700 clamp(1.7rem, 5vw, 2.4rem)/1.1 var(--serif); color: var(--wine); margin-top: 4px; }
 .ticket label, .ticket legend { display: block; margin: 22px 0 8px; padding: 0; color: var(--wine); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
 .ticket fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
-.ticket input[type="text"], .ticket textarea {
+.ticket input[type="text"], .ticket input[type="tel"], .ticket textarea {
   width: 100%; padding: 15px 14px; border: 1px solid #cdb27a; border-radius: 2px; background: #fffdf8; color: var(--navy); outline: none; font-weight: 400;
   transition: border-color .25s, box-shadow .25s;
 }
@@ -349,6 +344,7 @@ section { padding: clamp(66px, 9vw, 104px) max(18px, env(safe-area-inset-right))
 @media (max-width: 560px) { .name-grid { grid-template-columns: minmax(0, 1fr); gap: 0; } }
 .err { color: #b01634; font-size: 12px; margin-top: 6px; font-weight: 500; }
 .err:empty { display: none; }
+.phone-help { margin-top: 7px; color: #65596a; font-size: 12px; }
 
 .choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 @media (max-width: 560px) { .choice { grid-template-columns: minmax(0, 1fr); } }
@@ -410,7 +406,6 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
   .grid { grid-template-columns: minmax(0, 1fr); max-width: 460px; }
   .beam:nth-of-type(2), .beam:nth-of-type(3) { display: none; }
   .beam { width: 70vw; margin-left: -35vw; }
-  .carpet { height: 70px; }
   .vinyl { width: 240px; height: 240px; right: -110px; }
   .hero { padding-bottom: 100px; }
 }
@@ -428,7 +423,7 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
 .tb { border-radius: 16px; overflow: hidden; }
 .card { border-radius: 16px; }
 .dress-box, .ticket, .box { border-radius: 18px; }
-.ticket input[type="text"], .ticket textarea, .box input[type="text"] { border-radius: 9px; }
+.ticket input[type="text"], .ticket input[type="tel"], .ticket textarea, .box input[type="text"] { border-radius: 9px; }
 
 .moodboard {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -567,7 +562,6 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     <a href="#infos">La soirée</a>
     <a href="#rsvp">Présence</a>
     <a href="#playlist">Playlist</a>
-    <a href="#dresscode">Tenue</a>
   </div>
 </nav>
 
@@ -616,7 +610,6 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     <a href="#rsvp" class="btn">Je confirme ma présence ✦</a>
   </div>
 
-  <div class="carpet" aria-hidden="true"></div>
 </header>
 
 <!-- ============ PHOTOS DES DEUX STARS ============ -->
@@ -742,6 +735,12 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
         <output id="nbOut" aria-live="polite">1 personne</output>
         <button type="button" id="nbPlus" aria-label="Une personne de plus">+</button>
       </div>
+      <div class="phone-field">
+        <label for="telephone">Ton numéro de téléphone *</label>
+        <input id="telephone" name="telephone" type="tel" maxlength="25" autocomplete="tel" placeholder="Ex. 06 12 34 56 78">
+        <p class="err" id="errTelephone"></p>
+        <p class="phone-help">On te le demande uniquement si tu confirmes ta présence.</p>
+      </div>
     </div>
 
     <!-- piège anti-robots : doit rester vide -->
@@ -848,38 +847,12 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     <p class="latest-music__note" id="latestMusicStatus"></p>
   </div>
 </section>
-<!-- ============ TENUE ============ -->
-<section class="dress" id="dresscode">
-  <div class="head reveal">
-    <small>Dress code</small>
-    <h2 class="gold-text">Place au glamour !</h2>
-    <p>Ce soir, vous êtes les stars</p>
-  </div>
-
-  <div class="dress-box reveal">
-    <p class="dress-code gold-text">Tenue de gala<br>Robe de soirée &amp; costard exigés</p>
-
-    <p class="fine">Quelques inspirations pour trouver votre tenue :</p>
-      <div class="moodboard">
-      <figure>
-        <img src="tenues./robes-de-soiree.jpg" alt="Vos idées et inspirations de robes de soirée">
-        <figcaption>Robes de soirée</figcaption>
-      </figure>
-      <figure>
-        <img src="tenues./costumes-gala.jpg" alt="Vos idées et inspirations de costumes de gala">
-        <figcaption>Costumes &amp; smokings</figcaption>
-      </figure>
-    </div>
-
-  </div>
-</section>
-
 <!-- ============ GÉNÉRIQUE DE FIN ============ -->
 <footer>
   <div class="credits">
     <div><small>Une production</small><b>Pierre &amp; Bakkis</b></div>
     <div><small>Avec</small><b>Toi, et toute la bande</b></div>
-    <div><small>Costumes</small><b>Gala exigé</b></div>
+    <div><small>Rendez-vous</small><b>20 février 2027</b></div>
     <div><small>Bande originale</small><b>Ta playlist</b></div>
   </div>
   <p class="end gold-text">Que cette soirée soit mémorable ! 🏉</p>
@@ -891,7 +864,7 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
    CONFIGURATION GOOGLE SHEETS
 ===================================== */
 
-// URL de ton Google Apps Script (inchangée : ton script actuel continue de fonctionner).
+// URL du déploiement Google Apps Script. Garde cette URL si tu redéploies le même projet.
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz19VFGnd65Q6bn_G1RniGhHOhegd-YRuejdvvHo1B5Y_KRE7WyyIPqrLZRvSzrYryN/exec";
 
 // Date de la soirée : 20 février 2027 à minuit (mois 1 = février).
@@ -1074,8 +1047,13 @@ $("nbPlus").addEventListener("click", () => { nombre = Math.min(6, nombre + 1); 
 const choix = () => (form.querySelector('input[name="presence"]:checked') || {}).value || "";
 
 form.querySelectorAll('input[name="presence"]').forEach(r => r.addEventListener("change", () => {
-  blocNombre.classList.toggle("hidden", !choix().startsWith("Oui"));
+  const present = choix().startsWith("Oui");
+  blocNombre.classList.toggle("hidden", !present);
   $("errPresence").textContent = "";
+  if (!present) {
+    $("telephone").value = "";
+    erreur("telephone", "errTelephone", "");
+  }
 }));
 
 function erreur(inputId, errId, texte) {
@@ -1083,6 +1061,7 @@ function erreur(inputId, errId, texte) {
   $(inputId).classList.toggle("bad", Boolean(texte));
 }
 ["prenom", "nom"].forEach(id => $(id).addEventListener("input", () => erreur(id, id === "prenom" ? "errPrenom" : "errNom", "")));
+$("telephone").addEventListener("input", () => erreur("telephone", "errTelephone", ""));
 
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -1091,12 +1070,21 @@ form.addEventListener("submit", async function (e) {
   const prenom = $("prenom").value.trim();
   const nom = $("nom").value.trim();
   const presence = choix();
+  const telephone = $("telephone").value.trim();
   let ok = true;
 
   erreur("prenom", "errPrenom", prenom ? "" : "Il nous faut ton prénom !");
   erreur("nom", "errNom", nom ? "" : "Il nous faut ton nom !");
   $("errPresence").textContent = presence ? "" : "Choisis ton destin !";
   if (!prenom || !nom || !presence) ok = false;
+  if (presence.startsWith("Oui")) {
+    const chiffresTelephone = telephone.replace(/\D/g, "");
+    const telephoneValide = chiffresTelephone.length >= 8 && chiffresTelephone.length <= 15;
+    erreur("telephone", "errTelephone", telephoneValide ? "" : "Indique un numéro de téléphone valide.");
+    if (!telephoneValide) ok = false;
+  } else {
+    erreur("telephone", "errTelephone", "");
+  }
   if (!ok) { $("resultat").textContent = ""; return; }
 
   // Mêmes champs qu'avant : ton script Google continue de les recevoir.
@@ -1105,7 +1093,8 @@ form.addEventListener("submit", async function (e) {
     prenom,
     nom,
     presence,
-    nombre: presence.startsWith("Oui") ? String(nombre) : "0"
+    nombre: presence.startsWith("Oui") ? String(nombre) : "0",
+    telephone: presence.startsWith("Oui") ? telephone : ""
   };
 
   const envoye = await envoyerDonnees(
@@ -1134,37 +1123,56 @@ form.addEventListener("submit", async function (e) {
 const mine = $("mine");
 const mesSons = [];
 
-async function chargerDernieresMusiques() {
+function chargerDernieresMusiques() {
   const liste = $("latestMusicList");
   const statut = $("latestMusicStatus");
   if (!liste) return;
-  try {
-    const response = await fetch(SCRIPT_URL + "?action=lastMusic&v=" + Date.now(), { cache: "no-store" });
-    if (!response.ok) throw new Error("Lecture indisponible");
-    const data = await response.json();
-    const musiques = Array.isArray(data.musiques) ? data.musiques : [];
+
+  // JSONP : permet de lire la réponse Apps Script depuis GitHub Pages sans blocage CORS.
+  const callbackName = "afficherMusiques_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
+  const script = document.createElement("script");
+  const timeout = setTimeout(() => terminer(false), 12000);
+  let termine = false;
+
+  function terminer(ok) {
+    if (termine) return;
+    termine = true;
+    clearTimeout(timeout);
+    script.remove();
+    try { delete window[callbackName]; } catch (_) { window[callbackName] = undefined; }
+    if (!ok) {
+      liste.replaceChildren();
+      const li = document.createElement("li");
+      li.className = "latest-music__empty";
+      li.textContent = "Impossible de charger les suggestions pour le moment.";
+      liste.append(li);
+      if (statut) statut.textContent = "Vérifie le déploiement Google Apps Script.";
+    }
+  }
+
+  window[callbackName] = data => {
+    if (termine) return;
+    const musiques = Array.isArray(data && data.musiques) ? data.musiques : [];
     liste.replaceChildren();
     if (!musiques.length) {
       const li = document.createElement("li");
       li.className = "latest-music__empty";
       li.textContent = "Pas encore de suggestion… À toi d'ouvrir le bal !";
       liste.append(li);
-      return;
+    } else {
+      musiques.slice(0, 3).forEach(musique => {
+        const li = document.createElement("li");
+        li.textContent = typeof musique === "string" ? musique : (musique.musique || "Suggestion musicale");
+        liste.append(li);
+      });
     }
-    musiques.slice(0, 3).forEach(musique => {
-      const li = document.createElement("li");
-      li.textContent = typeof musique === "string" ? musique : (musique.musique || "Suggestion musicale");
-      liste.append(li);
-    });
-    if (statut) statut.textContent = "Mis à jour automatiquement à l'ouverture de la page.";
-  } catch (error) {
-    liste.replaceChildren();
-    const li = document.createElement("li");
-    li.className = "latest-music__empty";
-    li.textContent = "Les suggestions seront visibles ici dès que la lecture Google Sheets sera activée.";
-    liste.append(li);
-    if (statut) statut.textContent = "";
-  }
+    if (statut) statut.textContent = "Les 3 dernières suggestions enregistrées sur Google Sheets.";
+    terminer(true);
+  };
+
+  script.onerror = () => terminer(false);
+  script.src = SCRIPT_URL + "?action=lastMusic&callback=" + encodeURIComponent(callbackName) + "&v=" + Date.now();
+  document.head.appendChild(script);
 }
 
 function afficherMesSons() {
