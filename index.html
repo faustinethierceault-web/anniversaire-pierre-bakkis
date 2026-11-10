@@ -59,7 +59,7 @@ nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px max(18px, env(safe-area-inset-right)) 10px max(18px, env(safe-area-inset-left));
-  background: rgba(10, 17, 41, .88); backdrop-filter: blur(12px);
+  background: rgba(7, 23, 47, .94); backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(230, 195, 122, .3);
 }
 .brand { font: 700 24px var(--serif); letter-spacing: 2px; color: var(--gold2); }
@@ -100,9 +100,9 @@ nav {
   min-height: min(900px, 100svh); display: grid; place-items: center;
   padding: 70px 18px 130px;
   background:
-    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(122, 27, 61, .75), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 90% 70%, rgba(27, 42, 87, .8), transparent 70%),
-    linear-gradient(180deg, #0c1432, var(--navy) 70%);
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(255, 255, 255, .13), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 90% 70%, rgba(216, 183, 110, .12), transparent 70%),
+    linear-gradient(180deg, #102443, #07172f 72%);
 }
 
 /* Faisceaux de projecteurs */
@@ -139,7 +139,7 @@ nav {
 .poster {
   position: relative; width: min(1020px, 100%); padding: clamp(34px, 6vw, 62px) clamp(16px, 4vw, 40px);
   border: 1px solid var(--gold); outline: 1px solid rgba(230, 195, 122, .35); outline-offset: 10px;
-  background: linear-gradient(180deg, rgba(10, 17, 41, .55), rgba(74, 15, 38, .35));
+  background: linear-gradient(180deg, rgba(16, 36, 67, .72), rgba(7, 23, 47, .72));
   backdrop-filter: blur(3px);
   animation: rise 1.2s var(--ease) both;
 }
@@ -367,8 +367,19 @@ section { padding: clamp(66px, 9vw, 104px) max(18px, env(safe-area-inset-right))
 .form-message:empty { display: none; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
+
+.count-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:8px; }
+.count-group { min-width:0; }
+.count-group label { min-height:34px; }
+.accompagnants-fields { display:grid; gap:12px; margin-top:18px; }
+.accompagnant-card { padding:14px; border:1px solid rgba(205,178,122,.7); background:#fffaf0; }
+.accompagnant-card strong { display:block; color:var(--wine); font:600 1.15rem var(--serif); margin-bottom:6px; }
+.accompagnant-card .name-grid { margin-top:4px; }
+.sleep-notice { margin-top:18px; padding:15px 16px; border:1px solid #c9a75f; background:#f5edda; color:#102443; text-align:center; font-size:13px; line-height:1.6; font-weight:600; }
+@media(max-width:560px) { .count-row { grid-template-columns:1fr; gap:8px; } .count-group label { min-height:0; } }
+
 /* ---------- PLAYLIST ---------- */
-.playlist { background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(122, 27, 61, .5), transparent 70%), var(--navy); overflow: hidden; }
+.playlist { background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(112, 43, 61, .18), transparent 70%), var(--navy); overflow: hidden; }
 .vinyl { position: absolute; right: -130px; top: 80px; width: 360px; height: 360px; border-radius: 50%; opacity: .18; pointer-events: none;
   background: radial-gradient(circle, var(--wine) 0 14%, #000 15% 17%, transparent 18%), repeating-radial-gradient(circle, #111 0 3px, #1d2547 4px 5px);
   border: 2px solid var(--gold); animation: spin 14s linear infinite; }
@@ -515,7 +526,7 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
 .dress-colors {
   position: relative; max-width: 760px; margin: 28px auto 0; padding: 24px 28px;
   text-align: center; border: 1px solid rgba(230,195,122,.45); border-radius: 16px;
-  background: linear-gradient(145deg, rgba(16,36,67,.8), rgba(61,23,36,.35));
+  background: linear-gradient(145deg, rgba(16,36,67,.9), rgba(7,23,47,.55));
 }
 .dress-colors__label { display:block; color:var(--gold); font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:10px; }
 .dress-colors p { color:var(--cream); line-height:1.7; }
@@ -525,7 +536,7 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
 .swatch--navy { background:#102443; } .swatch--white { background:#fffdf8; } .swatch--gold { background:#d8b76e; } .swatch--wine { background:#702b3d; }
 
 /* ---------- TROIS DERNIÈRES SUGGESTIONS MUSICALES ---------- */
-.latest-music { position:relative; max-width:760px; margin:30px auto 0; background:linear-gradient(145deg,rgba(16,36,67,.92),rgba(61,23,36,.62)); border:1px solid rgba(216,183,110,.4); }
+.latest-music { position:relative; max-width:760px; margin:30px auto 0; background:linear-gradient(145deg,rgba(16,36,67,.96),rgba(7,23,47,.82)); border:1px solid rgba(216,183,110,.4); }
 .latest-music h3 { color:var(--gold2); font:600 1.8rem var(--serif); text-align:center; margin:0 0 8px; }
 .latest-music__intro, .latest-music__note { text-align:center; color:rgba(255,253,248,.72); font-size:.85rem; }
 .latest-music ol { list-style:none; counter-reset:songs; padding:0; margin:22px 0 0; display:grid; gap:10px; }
@@ -579,7 +590,7 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
   <div class="poster">
     <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
 
-    <p class="eyebrow"><b>✦</b>&nbsp; Vous êtes invités &nbsp;<b>✦</b></p>
+    <p class="eyebrow">Vous êtes invités</p>
 
     <h1 class="names gold-text">
       <span>PIERRE</span><span class="amp">&</span><span>BAKKIS</span>
@@ -588,18 +599,7 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     <p class="hero-sub">
       <span class="age gold-text">18 ANS</span>
     </p>
-
-    <div class="ornament" aria-hidden="true">
-      <!-- ballon de rugby -->
-      <svg viewBox="0 0 120 70"><ellipse cx="60" cy="35" rx="54" ry="29" transform="rotate(-18 60 35)" stroke-width="2.6"/><path d="M33 53L87 17" stroke-width="2.4"/><path d="M46 38l5 6M54 32l5 6M62 26l5 6M70 20l5 6" stroke-width="2.2"/></svg>
-    </div>
-
-    <p class="hero-text">
-      Deux anniversaires, une salle au milieu des vignes,<br>
-      et une nuit digne du grand écran.
-    </p>
-
-    <p class="cd-label" id="cdLabel">Compte à rebours avant le grand soir</p>
+<p class="cd-label" id="cdLabel">Compte à rebours avant le grand soir</p>
     <div class="countdown" id="countdown" role="timer" aria-labelledby="cdLabel">
       <div class="tb"><strong id="days">000</strong><span>Jours</span></div>
       <div class="tb"><strong id="hours">00</strong><span>Heures</span></div>
@@ -616,9 +616,7 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
 
 <section class="stars-gallery" id="photos">
   <div class="head reveal">
-    <small>Les vedettes du soir</small>
     <h2 class="gold-text">Les deux stars de la soirée</h2>
-    <p>Pierre &amp; Bakkis · 18 ans, ça se fête !</p>
   </div>
 
   <div class="photo-marquee reveal" aria-label="Galerie photos de Pierre et Bakkis">
@@ -643,9 +641,6 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     </div>
   </div>
 
-  <p class="gallery-note">
-    Quelques souvenirs… et encore beaucoup à créer !
-  </p>
 </section>
 <!-- ============ LA SOIRÉE ============ -->
 <section class="details" id="infos">
@@ -681,10 +676,9 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
   <div class="dress-colors reveal">
     <span class="dress-colors__label">Dress code · Palette de la soirée</span>
     <p><strong>Chic et élégant :</strong> bleu marine, blanc et doré, avec une touche de rouge bordeaux.</p>
-    <div class="color-swatches" aria-label="Couleurs : bleu marine, blanc, doré et rouge bordeaux">
+    <div class="color-swatches" aria-label="Couleurs : bleu marine, blanc et rouge bordeaux">
       <span class="swatch swatch--navy" title="Bleu marine"></span>
       <span class="swatch swatch--white" title="Blanc"></span>
-      <span class="swatch swatch--gold" title="Doré"></span>
       <span class="swatch swatch--wine" title="Rouge bordeaux"></span>
     </div>
   </div>
@@ -695,7 +689,6 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
   <div class="head reveal">
     <small>Réponse souhaitée</small>
     <h2 class="gold-text">Alors, tu viens ?</h2>
-    <p>Promis, on ne juge pas les « non, flemme »</p>
   </div>
 
   <form class="ticket reveal" id="formPresence" novalidate>
@@ -729,17 +722,27 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
     </fieldset>
 
     <div id="blocNombre" class="hidden">
-      <label for="nbMinus">Combien de personnes (toi compris) ?</label>
-      <div class="stepper">
-        <button type="button" id="nbMinus" aria-label="Une personne de moins">−</button>
-        <output id="nbOut" aria-live="polite">1 personne</output>
-        <button type="button" id="nbPlus" aria-label="Une personne de plus">+</button>
+      <div class="count-row">
+        <div class="count-group">
+          <label for="enfantsMinus">Nombre d'enfants</label>
+          <div class="stepper">
+            <button type="button" id="enfantsMinus" aria-label="Un enfant de moins">−</button>
+            <output id="enfantsOut" aria-live="polite">0</output>
+            <button type="button" id="enfantsPlus" aria-label="Un enfant de plus">+</button>
+          </div>
+        </div>
+        <div class="count-group">
+          <label for="adultesMinus">Nombre d'adultes accompagnants</label>
+          <div class="stepper">
+            <button type="button" id="adultesMinus" aria-label="Un adulte de moins">−</button>
+            <output id="adultesOut" aria-live="polite">0</output>
+            <button type="button" id="adultesPlus" aria-label="Un adulte de plus">+</button>
+          </div>
+        </div>
       </div>
-      <div class="phone-field">
-        <label for="telephone">Ton numéro de téléphone *</label>
-        <input id="telephone" name="telephone" type="tel" maxlength="25" autocomplete="tel" placeholder="Ex. 06 12 34 56 78">
-        <p class="err" id="errTelephone"></p>
-        <p class="phone-help">On te le demande uniquement si tu confirmes ta présence.</p>
+      <div id="accompagnantsFields" class="accompagnants-fields"></div>
+      <div id="noticeDodo" class="sleep-notice hidden">
+        ✨ Bonne nouvelle : les jeunes peuvent dormir sur place. Pensez simplement à apporter un matelas et un sac de couchage !
       </div>
     </div>
 
@@ -842,9 +845,12 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
 
   <div class="latest-music box reveal" aria-live="polite">
     <h3>Les 3 dernières idées de musique</h3>
-    <p class="latest-music__intro">Les dernières suggestions partagées par les invités</p>
-    <ol id="latestMusicList"><li class="latest-music__empty">Chargement des suggestions…</li></ol>
-    <p class="latest-music__note" id="latestMusicStatus"></p>
+    <p class="latest-music__intro">Les trois idées retenues pour la soirée</p>
+    <ol id="latestMusicList">
+      <li>Parfum quartier JUL</li>
+      <li>RENE CAOVILLA Gambi</li>
+      <li>L&#39;encantada Nadau</li>
+    </ol>
   </div>
 </section>
 <!-- ============ GÉNÉRIQUE DE FIN ============ -->
@@ -1038,22 +1044,75 @@ async function envoyerDonnees(data, button, message, successText) {
 ===================================== */
 const form = $("formPresence");
 const blocNombre = $("blocNombre");
-let nombre = 1;
+const enfantsOut = $("enfantsOut");
+const adultesOut = $("adultesOut");
+const accompagnantsFields = $("accompagnantsFields");
+const noticeDodo = $("noticeDodo");
 
-function afficherNombre() { $("nbOut").textContent = nombre + (nombre > 1 ? " personnes" : " personne"); }
-$("nbMinus").addEventListener("click", () => { nombre = Math.max(1, nombre - 1); afficherNombre(); });
-$("nbPlus").addEventListener("click", () => { nombre = Math.min(6, nombre + 1); afficherNombre(); });
+let nombreEnfants = 0;
+let nombreAdultes = 0;
+
+function afficherCompteurs() {
+  enfantsOut.textContent = String(nombreEnfants);
+  adultesOut.textContent = String(nombreAdultes);
+}
+
+function creerChampsAdultes() {
+  accompagnantsFields.replaceChildren();
+  for (let i = 1; i <= nombreAdultes; i++) {
+    const card = document.createElement("div");
+    card.className = "accompagnant-card";
+    const titre = document.createElement("strong");
+    titre.textContent = "Adulte accompagnant " + i;
+    const grid = document.createElement("div");
+    grid.className = "name-grid";
+
+    [["Prénom", "prenomAdulte" + i, "Ex. Alex"], ["Nom", "nomAdulte" + i, "Ex. Dupont"]].forEach(([labelText, id, placeholder]) => {
+      const wrap = document.createElement("div");
+      const label = document.createElement("label");
+      label.htmlFor = id;
+      label.textContent = labelText + " *";
+      const input = document.createElement("input");
+      input.type = "text";
+      input.id = id;
+      input.name = id;
+      input.maxLength = 60;
+      input.placeholder = placeholder;
+      wrap.append(label, input);
+      grid.append(wrap);
+    });
+
+    card.append(titre, grid);
+    accompagnantsFields.append(card);
+  }
+}
+
+$("enfantsMinus").addEventListener("click", () => {
+  nombreEnfants = Math.max(0, nombreEnfants - 1);
+  afficherCompteurs();
+});
+$("enfantsPlus").addEventListener("click", () => {
+  nombreEnfants = Math.min(12, nombreEnfants + 1);
+  afficherCompteurs();
+});
+$("adultesMinus").addEventListener("click", () => {
+  nombreAdultes = Math.max(0, nombreAdultes - 1);
+  afficherCompteurs();
+  creerChampsAdultes();
+});
+$("adultesPlus").addEventListener("click", () => {
+  nombreAdultes = Math.min(6, nombreAdultes + 1);
+  afficherCompteurs();
+  creerChampsAdultes();
+});
 
 const choix = () => (form.querySelector('input[name="presence"]:checked') || {}).value || "";
 
 form.querySelectorAll('input[name="presence"]').forEach(r => r.addEventListener("change", () => {
   const present = choix().startsWith("Oui");
   blocNombre.classList.toggle("hidden", !present);
+  noticeDodo.classList.toggle("hidden", !present);
   $("errPresence").textContent = "";
-  if (!present) {
-    $("telephone").value = "";
-    erreur("telephone", "errTelephone", "");
-  }
 }));
 
 function erreur(inputId, errId, texte) {
@@ -1061,40 +1120,52 @@ function erreur(inputId, errId, texte) {
   $(inputId).classList.toggle("bad", Boolean(texte));
 }
 ["prenom", "nom"].forEach(id => $(id).addEventListener("input", () => erreur(id, id === "prenom" ? "errPrenom" : "errNom", "")));
-$("telephone").addEventListener("input", () => erreur("telephone", "errTelephone", ""));
 
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
-  if ($("piege").value) return;                       // robot : on ignore
+  if ($("piege").value) return;
 
   const prenom = $("prenom").value.trim();
   const nom = $("nom").value.trim();
   const presence = choix();
-  const telephone = $("telephone").value.trim();
   let ok = true;
 
   erreur("prenom", "errPrenom", prenom ? "" : "Il nous faut ton prénom !");
   erreur("nom", "errNom", nom ? "" : "Il nous faut ton nom !");
   $("errPresence").textContent = presence ? "" : "Choisis ton destin !";
   if (!prenom || !nom || !presence) ok = false;
-  if (presence.startsWith("Oui")) {
-    const chiffresTelephone = telephone.replace(/\D/g, "");
-    const telephoneValide = chiffresTelephone.length >= 8 && chiffresTelephone.length <= 15;
-    erreur("telephone", "errTelephone", telephoneValide ? "" : "Indique un numéro de téléphone valide.");
-    if (!telephoneValide) ok = false;
-  } else {
-    erreur("telephone", "errTelephone", "");
-  }
-  if (!ok) { $("resultat").textContent = ""; return; }
 
-  // Mêmes champs qu'avant : ton script Google continue de les recevoir.
+  const accompagnants = [];
+  if (presence.startsWith("Oui")) {
+    for (let i = 1; i <= nombreAdultes; i++) {
+      const p = $("prenomAdulte" + i);
+      const n = $("nomAdulte" + i);
+      const prenomAdulte = p.value.trim();
+      const nomAdulte = n.value.trim();
+      p.classList.toggle("bad", !prenomAdulte);
+      n.classList.toggle("bad", !nomAdulte);
+      if (!prenomAdulte || !nomAdulte) ok = false;
+      accompagnants.push({ prenom: prenomAdulte, nom: nomAdulte });
+    }
+  }
+
+  if (!ok) {
+    $("resultat").textContent = "Vérifie les champs obligatoires avant d'envoyer.";
+    return;
+  }
+
+  const totalPersonnes = presence.startsWith("Oui") ? 1 + nombreEnfants + nombreAdultes : 0;
   const data = {
     type: "presence",
     prenom,
     nom,
     presence,
-    nombre: presence.startsWith("Oui") ? String(nombre) : "0",
-    telephone: presence.startsWith("Oui") ? telephone : ""
+    nombre: String(totalPersonnes),
+    enfants: presence.startsWith("Oui") ? String(nombreEnfants) : "0",
+    adultes: presence.startsWith("Oui") ? String(nombreAdultes) : "0",
+    accompagnants: presence.startsWith("Oui")
+      ? accompagnants.map(a => a.prenom + " " + a.nom).join(", ")
+      : ""
   };
 
   const envoye = await envoyerDonnees(
@@ -1102,17 +1173,20 @@ form.addEventListener("submit", async function (e) {
     $("btnPresence"),
     $("resultat"),
     presence.startsWith("Oui")
-      ? "C'est validé ! Prépare ta tenue, les projecteurs t'attendent ! 🥂"
-      : "Réponse enregistrée… On gardera une coupe au frais (ou pas) ! 😎"
+      ? "C'est validé ! Les jeunes peuvent dormir sur place avec un matelas et un sac de couchage. À très vite ! 🥂"
+      : "Réponse enregistrée. Merci de nous avoir répondu !"
   );
 
   if (envoye) {
     this.reset();
-    nombre = 1; afficherNombre();
+    nombreEnfants = 0;
+    nombreAdultes = 0;
+    afficherCompteurs();
+    creerChampsAdultes();
     blocNombre.classList.add("hidden");
+    noticeDodo.classList.add("hidden");
   }
 });
-
 
 
 /* Le bandeau photos défile automatiquement en CSS. */
@@ -1207,12 +1281,9 @@ $("formMusique").addEventListener("submit", async function (e) {
     mesSons.unshift(value);          // rappel local de ce que TU as proposé
     afficherMesSons();
     this.reset();
-    chargerDernieresMusiques();
   }
 });
 
-// Charge les trois dernières propositions enregistrées dans Google Sheets.
-chargerDernieresMusiques();
 </script>
 
 </body>
