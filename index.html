@@ -545,16 +545,12 @@ footer .fine { margin-top: 10px; font-size: 10px; letter-spacing: 3px; text-tran
 .latest-music__empty { justify-content:center; color:rgba(255,253,248,.7) !important; }
 .latest-music__empty::before { content:"♫" !important; }
 @media (max-width:600px) { .dress-colors { padding:20px 16px; } .latest-music { padding:22px 16px; } }
-/* ==========================================================================
-   ADAPTATION TÉLÉPHONE : à coller JUSTE AVANT la balise </style>
-   (après tout le reste, pour que ces règles aient priorité)
-========================================================================== */
-
+ 
 /* ----- Base : pas de zoom de texte automatique, pas de flash gris au toucher ----- */
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body { -webkit-tap-highlight-color: transparent; }
 img, svg { max-width: 100%; }
-
+ 
 /* ----- Appareils tactiles : pas d'effets « survol » qui restent bloqués ----- */
 @media (hover: none) {
   .card:hover { transform: none; box-shadow: none; border-color: rgba(230,195,122,.4); }
@@ -563,10 +559,10 @@ img, svg { max-width: 100%; }
   .photo-group img:hover { transform: none; }
   .hero::before { display: none; }          /* lumière qui suit le curseur : inutile au doigt */
 }
-
+ 
 /* ----- Téléphone ----- */
 @media (max-width: 760px) {
-
+ 
   /* Barre du haut + menu */
   nav { padding-top: 6px; padding-bottom: 6px; }
   .links {
@@ -577,7 +573,7 @@ img, svg { max-width: 100%; }
   }
   .links a { padding: 17px 0; font-size: 13px; letter-spacing: 3px; }
   html { scroll-padding-top: 62px; }
-
+ 
   /* Accueil */
   .hero { min-height: auto; padding: 44px 16px 84px; }
   .poster { outline-offset: 7px; padding: 34px 16px 30px; }
@@ -586,42 +582,42 @@ img, svg { max-width: 100%; }
   .tb { padding: 12px 2px 9px; border-radius: 12px; }
   .tb span { font-size: 9px; letter-spacing: 1.5px; }
   .btn { width: 100%; padding: 18px 16px; font-size: 12px; letter-spacing: 2.5px; }
-
+ 
   /* Moins de projecteurs / effets lourds = plus fluide et moins de batterie */
   .beam { opacity: .4; }
   .poster, .box, nav { -webkit-backdrop-filter: none; backdrop-filter: none; }
   nav { background: rgba(7,23,47,.98); }
   .poster { background: linear-gradient(180deg, rgba(16,36,67,.9), rgba(7,23,47,.9)); }
-
+ 
   /* Sections */
   section { padding-top: 56px; padding-bottom: 56px; }
   .head { margin-bottom: 30px; }
   .head small { letter-spacing: 4px; }
   .head p { letter-spacing: 1.5px; font-size: 10.5px; }
-
+ 
   /* Bandeau photos : un peu plus grand et défilement un peu plus lent */
   .stars-gallery { padding: 44px 0 38px; }
   .photo-track { animation-duration: 40s; }
   .photo-group img { width: 62vw; max-width: 250px; height: 76vw; max-height: 310px; }
-
+ 
   /* Cartes « La soirée » */
   .card { padding: 30px 20px 26px; }
   .card .big { font-size: 4.4rem; }
   .card p { font-size: 15px; }
   .dress-colors { margin-top: 22px; }
   .dress-colors p { font-size: 14px; }
-
+ 
   /* Formulaire de présence */
   .ticket { padding: 26px 16px 26px; border-radius: 16px; }
   .ticket::before, .ticket::after { top: 96px; width: 22px; height: 22px; }
   .ticket::before { left: -11px; } .ticket::after { right: -11px; }
   .ticket__top { margin: 0 8px 4px; padding-bottom: 22px; }
   .ticket label, .ticket legend { font-size: 11px; margin-top: 20px; }
-
+ 
   /* 16px minimum dans les champs = iPhone ne zoome pas au clic */
   .ticket input[type="text"], .ticket input[type="tel"], .ticket textarea,
   .box input[type="text"] { font-size: 16px; padding: 16px 14px; min-height: 52px; }
-
+ 
   .choice label { min-height: 62px; font-size: 1.25rem; }
   .count-row { grid-template-columns: 1fr; gap: 14px; }
   .stepper { display: flex; width: 100%; }
@@ -630,27 +626,27 @@ img, svg { max-width: 100%; }
   .accompagnant-card { padding: 12px; }
   .sleep-notice { font-size: 13.5px; padding: 14px; }
   .form-message { font-size: 14.5px; }
-
+ 
   /* Playlist */
   .box { padding: 24px 16px; border-radius: 16px; }
   .vinyl { opacity: .1; }
   .latest-music { padding: 22px 16px; }
   .latest-music h3 { font-size: 1.5rem; }
   .latest-music li { padding: 12px; font-size: 14.5px; overflow-wrap: anywhere; }
-
+ 
   /* Scène de plaquage */
   .pitch { padding-top: 26px; }
   .pitch__label { letter-spacing: 3px; font-size: 9.5px; padding: 0 8px; }
-
+ 
   /* Fin de page */
   footer { padding: 54px 18px 44px; }
   footer .end { font-size: 1.7rem; }
   footer .fine { letter-spacing: 2px; line-height: 1.8; }
-
+ 
   /* Confettis plus légers */
   .confetti { width: 7px; height: 12px; }
 }
-
+ 
 /* ----- Très petits écrans (iPhone SE, vieux Android) ----- */
 @media (max-width: 380px) {
   .brand { font-size: 21px; }
@@ -660,7 +656,7 @@ img, svg { max-width: 100%; }
   .tb span { font-size: 8px; letter-spacing: 1px; }
   .card h3 { font-size: 1.5rem; }
 }
-
+ 
 /* ----- Téléphone en mode paysage (peu de hauteur) ----- */
 @media (max-height: 480px) and (orientation: landscape) {
   .hero { padding: 36px 24px 56px; }
@@ -668,6 +664,8 @@ img, svg { max-width: 100%; }
   .names { margin: 14px 0 4px; }
   .links { max-height: calc(100svh - 56px); overflow-y: auto; }
 }
+ 
+   
 </style>
 </head>
 
