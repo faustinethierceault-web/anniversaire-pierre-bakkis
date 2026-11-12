@@ -871,7 +871,7 @@ Les noms et extensions doivent correspondre exactement aux chemins utilisés ici
 ===================================== */
 
 // URL du déploiement Google Apps Script. Garde cette URL si tu redéploies le même projet.
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwXPJ_Bn4m4DGtTOEILx6_3BdVk5PSE1VA0HUMgOq6nn_MCQ7fj5qG1WHSWDoY0yLgW/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzIXc0nEJ7FZ0Ao2-dPxGaqYs8gXeje5VfmoEVP3QzF6bDaoc5FMBc40FHqmWnWNIue/exec";
 
 // Date de la soirée : 20 février 2027 à minuit (mois 1 = février).
 const targetDate = new Date(2027, 1, 20, 20, 0, 0);
@@ -1002,144 +1002,37 @@ function lancerConfettis() {
   declencherFlash();
 }
 
-/****************************************************
- * ENVOI ET VÉRIFICATION GOOGLE SHEETS
- ****************************************************/
 
-function attendre(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
-// Vérifie auprès de Google que la réponse a bien été enregistrée
-function verifierEnregistrement(requestId) {
-
-  return new Promise((resolve, reject) => {
-
-    const callbackName =
-      "confirmation_" + Date.now() + "_" +
-      Math.floor(Math.random() * 100000);
-
-    const script = document.createElement("script");
-
-    let termine = false;
-
-    const timeout = setTimeout(() => {
-      finir(new Error("Délai de confirmation dépassé."));
-    }, 8000);
-
-    function finir(erreur, resultat) {
-      if (termine) return;
-
-      termine = true;
-      clearTimeout(timeout);
-      script.remove();
-
-      try {
-        delete window[callbackName];
-      } catch (_) {
-        window[callbackName] = undefined;
-      }
-
-      if (erreur) reject(erreur);
-      else resolve(resultat);
-    }
-
-    window[callbackName] = resultat => {
-      finir(null, resultat);
-    };
-
-    script.onerror = () => {
-      finir(new Error("Impossible de contacter Google Sheets."));
-    };
-
-    script.src =
-      SCRIPT_URL +
-      "?action=check" +
-      "&requestId=" + encodeURIComponent(requestId) +
-      "&callback=" + encodeURIComponent(callbackName) +
-      "&v=" + Date.now();
-
-    document.head.appendChild(script);
-  });
-}
-
-
-// Fonction principale d'envoi
+/* =====================================
+   ENVOI DES DONNÉES (Google Sheets)
+===================================== */
 async function envoyerDonnees(data, button, message, successText) {
 
   if (!SCRIPT_URL || SCRIPT_URL.includes("COLLE_ICI")) {
-    message.textContent = "Le formulaire n'est pas connecté à Google Sheets.";
+    message.textContent = "Le formulaire n'est pas encore connecté à Google Sheets. Ajoute l'URL Google Apps Script dans le code.";
     return false;
   }
 
   button.disabled = true;
-
   const original = button.textContent;
   button.textContent = "Envoi en cours…";
 
-  message.textContent = "Transmission de ta réponse…";
-
   try {
-
-    // Identifiant unique pour cette réponse
-    const requestId =
-      window.crypto && window.crypto.randomUUID
-        ? window.crypto.randomUUID()
-        : Date.now() + "-" + Math.random().toString(36).slice(2);
-
-    data.requestId = requestId;
-
-    // Envoi à Google Apps Script
     await fetch(SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8"
-      },
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(data)
     });
-
-    // On attend la confirmation réelle de Google
-    let resultat = null;
-
-    for (let tentative = 0; tentative < 5; tentative++) {
-
-      resultat = await verifierEnregistrement(requestId);
-
-      if (resultat && resultat.ok === true) {
-        message.textContent = successText;
-        lancerConfettis();
-        return true;
-      }
-
-      if (resultat && resultat.pending === false) {
-        throw new Error(
-          resultat.error || "Google Sheets a refusé l'enregistrement."
-        );
-      }
-
-      await attendre(700);
-    }
-
-    throw new Error(
-      resultat && resultat.error
-        ? resultat.error
-        : "Google n'a pas confirmé l'enregistrement."
-    );
+    message.textContent = successText;
+    lancerConfettis();
+    return true;
 
   } catch (error) {
-
-    console.error("Erreur Google Sheets :", error);
-
-    message.textContent =
-      "Ta réponse n'a pas pu être confirmée. " +
-      (error.message || "Réessaie dans un instant.");
-
+    message.textContent = "Oups, l'envoi n'a pas fonctionné. Réessaie dans un instant.";
     return false;
 
   } finally {
-
     button.disabled = false;
     button.textContent = original;
   }
@@ -1383,14 +1276,12 @@ $("formMusique").addEventListener("submit", async function (e) {
     message,
     "Son ajouté à la sélection ! On compte sur toi pour mettre l'ambiance ! 🎶"
   );
-if (envoye) {
-  mesSons.unshift(value);
-  afficherMesSons();
-  this.reset();
 
-  // Actualiser les 3 dernières musiques depuis Google Sheets
-  chargerDernieresMusiques();
-}
+  if (envoye) {
+    mesSons.unshift(value);          // rappel local de ce que TU as proposé
+    afficherMesSons();
+    this.reset();
+  }
 });
 
 </script>
